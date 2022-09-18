@@ -36,6 +36,7 @@ export interface HookTextFieldProps<T extends FieldValues = FieldValues> extends
 /**
  *
  * @description A text input field that uses react-hook-form to manage the form state.
+ *
  * @param {HookTextFieldProps}
  * if grid props are passed in we wrap the text field in a grid
  *
