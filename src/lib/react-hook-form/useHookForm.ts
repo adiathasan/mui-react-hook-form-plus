@@ -10,6 +10,7 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
+import { useInputValidate } from '@hooks/useInputValidate';
 import { useFillFormValues } from './useFillFormValues';
 
 // ====================================================
@@ -59,6 +60,7 @@ export function useHookForm<TFieldValues extends FieldValues = FieldValues, TCon
 	return {
 		registerState,
 		setValues: setterFn,
+		validator: useInputValidate(),
 		...form,
 	};
 }

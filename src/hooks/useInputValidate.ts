@@ -2,7 +2,7 @@ type Required = { message: string; value?: boolean } | boolean;
 type RegexInternal = { value: RegExp; message: string };
 type MaxLength = { value: number; message: string };
 type MinLength = { value: number; message: string };
-type ValidateFieldFn = (value: string) => Promise<string> | string | undefined;
+type ValidateFieldFn = (value: string) => Promise<string> | string;
 
 export interface Validator {
 	required?: Required;
