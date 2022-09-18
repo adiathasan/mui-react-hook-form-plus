@@ -1,12 +1,13 @@
 {
   "name": "mui-react-hook-form-plus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The complete type-safe MUI and react-hook-form combo and beyond with simple API",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-lib": "rollup -c",
+    "publish-lib": "yarn version --patch && npm publish",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=ce834c71045a"
   },
