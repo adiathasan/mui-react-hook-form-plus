@@ -51,6 +51,8 @@ export const simpleValidator = (validator: Validator = {}) => {
 		if (validateField && !!value && typeof validateField === 'function') {
 			return validateField(value);
 		}
+
+		return;
 	};
 };
 
