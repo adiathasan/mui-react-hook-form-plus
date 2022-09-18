@@ -70,7 +70,9 @@
     "react-dom": "^17.0.1",
     "react-hook-form": "^7.35.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vercel": "^28.2.5"
+  },
   "_id": "mui-react-hook-form-plus@1.0.0",
   "files": [
     "dist"
