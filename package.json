@@ -1,0 +1,25 @@
+{
+  "name": "mui-react-hook-form-plus",
+  "version": "1.0.0",
+  "description": "The complete type-safe MUI and react-hook-form combo and beyond with simple API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adiathasan/mui-react-hook-form-plus.git"
+  },
+  "keywords": [
+    "mui",
+    "react-hook-form",
+    "hooks",
+    "react"
+  ],
+  "author": "Adiat Hasan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adiathasan/mui-react-hook-form-plus/issues"
+  },
+  "homepage": "https://github.com/adiathasan/mui-react-hook-form-plus#readme"
+}
