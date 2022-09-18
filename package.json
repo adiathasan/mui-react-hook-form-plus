@@ -9,6 +9,7 @@
     "build-lib": "rollup -c",
     "publish-lib": "yarn version --patch && npm publish",
     "build-storybook": "build-storybook",
+    "publish-storybook": "yarn build-storybook && vercel",
     "chromatic": "npx chromatic --project-token=ce834c71045a"
   },
   "repository": {

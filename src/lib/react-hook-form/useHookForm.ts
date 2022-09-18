@@ -10,6 +10,8 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
+import { useFillFormValues } from './useFillFormValues';
+
 // ====================================================
 
 /**
@@ -52,8 +54,11 @@ export function useHookForm<TFieldValues extends FieldValues = FieldValues, TCon
 		[control, formState, setValue, trigger]
 	);
 
+	const { setterFn } = useFillFormValues(setValue);
+
 	return {
 		registerState,
+		setValues: setterFn,
 		...form,
 	};
 }

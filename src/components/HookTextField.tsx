@@ -13,7 +13,7 @@ import { TextField, TextFieldProps } from '@lib/mui/TextField';
 import { Grid, GridProps } from '@lib/mui/Grid';
 import { callAll } from '@utils/misc';
 
-export interface IFormInputTextProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+export interface HookTextFieldProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
 	textFieldProps?: TextFieldProps & {
 		readonly notifyText?: string;
 	};
@@ -36,7 +36,7 @@ export interface IFormInputTextProps<T extends FieldValues = FieldValues> extend
 /**
  *
  * @description A text input field that uses react-hook-form to manage the form state.
- * @param {IFormInputTextProps}
+ * @param {HookTextFieldProps}
  * if grid props are passed in we wrap the text field in a grid
  *
  * formState: The form state to use from the useHookForm hook that we are using.
@@ -49,7 +49,7 @@ export interface IFormInputTextProps<T extends FieldValues = FieldValues> extend
 export const HookTextField = <T extends FieldValues>({
 	gridProps,
 	...props
-}: IFormInputTextProps<T>): React.ReactElement => {
+}: HookTextFieldProps<T>): React.ReactElement => {
 	/**
 	 * if grid props are passed in we wrap the text field in a grid
 	 */
@@ -79,7 +79,7 @@ const Component = <T extends FieldValues>({
 	formState: { errors },
 	gridProps,
 	...restC
-}: IFormInputTextProps<T>) => {
+}: HookTextFieldProps<T>) => {
 	const { onChange, onBlur, notifyText, name: _, ...rest } = textFieldProps;
 
 	const { trimWhitespaceOnBlur = false, triggerErrorOnBlur = false } = config;
