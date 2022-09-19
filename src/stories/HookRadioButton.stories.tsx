@@ -34,11 +34,11 @@ stories.add('@HookRadioButton', () => {
 			<h3>This is a Radio field hooked up with react-hook-form</h3>
 			<Grid container columnSpacing={{ xs: 1, md: 3 }}>
 				<HookRadioButton
+					{...registerState('person.sex')}
 					gridProps={{
 						xs: 12,
 						md: 6,
 					}}
-					{...registerState('person.sex')}
 					fields={[
 						{ label: 'MALE', value: 'male' },
 						{ label: 'FEMALE', value: 'female' },
