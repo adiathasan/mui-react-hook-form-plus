@@ -1,6 +1,19 @@
 # mui-react-hook-form-plus
-The complete type-safe MUI and react-hook-form combo and beyond with simple API
+The complete type-safe MUI and react-hook-form combo and beyond with simple API.
 
-This is in BETA 
+#### Highly Customizable and supports 99% usecases
 
-MORE IS COMING...
+
+### This is in **BETA** 
+
+>## Components available 
+>
+>> ```<HookTextField />```
+>>
+>> ```<HookRadioButton />```
+>------
+>
+
+## [See examples](https://mui-react-hook-form-plus.vercel.app)
+
+### MORE IS COMING...

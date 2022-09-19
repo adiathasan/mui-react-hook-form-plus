@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { HookTextField } from '@components/HookTextField';
 import { Button, Grid } from '@mui/material';
 import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { jsonStringify } from '@utils/misc';
 
 const stories = storiesOf('HookTextField', module);
 
@@ -23,7 +24,7 @@ stories.add('@HookTextField', () => {
 	});
 
 	const onSubmit = (_data: typeof defaultValues) => {
-		alert(JSON.stringify(_data));
+		alert(jsonStringify(_data));
 	};
 
 	return (
