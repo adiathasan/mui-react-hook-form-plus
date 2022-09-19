@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { HookTextField } from '@components/HookTextField';
 import { Button, Grid } from '@mui/material';
 import { useHookForm } from '@lib/react-hook-form/useHookForm';
-import HookRadioButton from '@components/HookRadioButton';
+import { HookRadioButton } from '@components/HookRadioButton';
 import { jsonStringify } from '@utils/misc';
 
 const stories = storiesOf('HookRadioButton', module);

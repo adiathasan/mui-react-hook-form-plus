@@ -16,6 +16,13 @@ export default [
 			},
 		],
 		plugins: [typescript({ objectHashIgnoreUnknownHack: true }), postcss({ modules: true })],
-		external: ['react', 'react-dom', 'react-hook-form', '@mui/material/TextField', '@mui/material/Grid'],
+		external: [
+			'react',
+			'react-dom',
+			'react-hook-form',
+			'@mui/material/TextField',
+			'@mui/material/Grid',
+			'@mui/material',
+		],
 	},
 ];
