@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-lib": "rollup -c",
+    "build": "rollup -c",
     "build-storybook": "build-storybook",
-    "publish-storybook": "yarn build-storybook && vercel",
+    "push": "yarn build-storybook && git add . && git commit -m 'push - master' && git push origin master",
     "chromatic": "npx chromatic --project-token=ce834c71045a"
   },
   "repository": {
