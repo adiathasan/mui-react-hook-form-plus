@@ -1,6 +1,6 @@
 {
   "name": "mui-react-hook-form-plus",
-  "version": "0.0.81",
+  "version": "0.0.82",
   "description": "The complete type-safe MUI and react-hook-form combo and beyond with simple API",
   "main": "dist/index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/adiathasan/mui-react-hook-form-plus/issues"
   },
-  "homepage": "https://mui-react-hook-form-plus.vercel.app/",
+  "homepage": "https://mui-react-hook-form-plus.vercel.app",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
