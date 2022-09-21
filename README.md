@@ -16,8 +16,8 @@ The complete type-safe MUI and react-hook-form combo and beyond with simple API.
 >------
 >
 
-## [See examples](https://mui-react-hook-form-plus.vercel.app)
+## [See examples](https://mui-react-hook-form-plus.vercel.app/?path=/docs/)
 
-#### https://mui-react-hook-form-plus.vercel.app
+#### https://mui-react-hook-form-plus.vercel.app/?path=/docs/
 
 ### MORE IS COMING...

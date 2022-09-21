@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build": "rollup -c",
     "build-storybook": "build-storybook",
-    "push": "yarn build-storybook && git add . && git commit -m 'push - master' && git push origin master",
+    "push": "yarn build-storybook && git add . && git commit -m 'push - storybook - master - deploy - vercel' && git push origin master",
     "chromatic": "npx chromatic --project-token=ce834c71045a"
   },
   "repository": {
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/adiathasan/mui-react-hook-form-plus/issues"
   },
-  "homepage": "https://mui-react-hook-form-plus.vercel.app/?path=/docs",
+  "homepage": "https://mui-react-hook-form-plus.vercel.app/?path=/docs/",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
