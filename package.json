@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/adiathasan/mui-react-hook-form-plus/issues"
   },
-  "homepage": "https://mui-react-hook-form-plus.vercel.app",
+  "homepage": "https://mui-react-hook-form-plus.vercel.app/?path=/docs",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-react": "^7.18.6",

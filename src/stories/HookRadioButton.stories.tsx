@@ -35,15 +35,15 @@ stories.add('@HookRadioButton', () => {
 			<Grid container columnSpacing={{ xs: 1, md: 3 }}>
 				<HookRadioButton
 					{...registerState('person.sex')}
-					gridProps={{
-						xs: 12,
-						md: 6,
-					}}
 					fields={[
 						{ label: 'MALE', value: 'male' },
 						{ label: 'FEMALE', value: 'female' },
 						{ label: 'OTHERS', value: 'others' },
 					]}
+					gridProps={{
+						xs: 12,
+						md: 6,
+					}}
 				/>
 			</Grid>
 
