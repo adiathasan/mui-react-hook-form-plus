@@ -7,9 +7,9 @@ import { HookTextField } from '@components/HookTextField';
 import { jsonStringify } from '@utils/misc';
 import { Stack } from '@mui/system';
 
-const stories = storiesOf('useHookForm', module);
+const stories = storiesOf('Form Hooks', module);
 
-stories.add('@setValues', () => {
+stories.add('useHookForm', () => {
 	// import { HookTextField, useHookForm } from 'mui-react-hook-form-plus ';
 
 	const defaultValues = { firstName: 'Adiat', lastName: 'Hasan' };
@@ -24,6 +24,7 @@ stories.add('@setValues', () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
+			<h2>`useHookForm` replaces `useForm` form `react-hook-form` library ↩</h2>
 			<h3>Learn how to add or reset multiple fields with new `setValues` from `useHookForm` hook</h3>
 
 			<Stack direction='row' spacing={2}>
