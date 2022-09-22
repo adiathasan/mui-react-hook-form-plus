@@ -9,6 +9,7 @@
     "build": "rollup -c",
     "build-storybook": "build-storybook",
     "push": "yarn build-storybook && git add . && git commit -m 'push - storybook - master - deploy - vercel' && git push origin master",
+    "push-docs": "yarn build-storybook && git add . && git commit -m 'push - storybook - story - deploy - vercel' && git push origin story",
     "chromatic": "npx chromatic --project-token=ce834c71045a"
   },
   "repository": {
