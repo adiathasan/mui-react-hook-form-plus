@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SwitchProps, FormControlLabelProps, GridProps, Grid, FormControlLabel, Switch } from '@mui/material';
+import { GridProps, Grid, Rating, RatingProps } from '@mui/material';
 
 import { callAll } from '@utils/misc';
 
@@ -12,10 +12,8 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
-export interface HookSwitchProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
-	switchProps?: SwitchProps;
-	labelProps?: Omit<FormControlLabelProps, 'control' | 'label'>;
-	label?: React.ReactNode;
+export interface HookRatingProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+	ratingProps?: RatingProps;
 	formState?: FormState<T>;
 	gridProps?: GridProps;
 	setValue?: UseFormSetValue<T>;
@@ -31,7 +29,7 @@ export interface HookSwitchProps<T extends FieldValues = FieldValues> extends Us
 /**
  *
  * @description A text input field that uses react-hook-form to manage the form state.
- * @param {HookSwitchProps}
+ * @param {HookRatingProps}
  *
  * formState: The form state to use from the useHookForm hook that we are using.
  *
@@ -40,7 +38,7 @@ export interface HookSwitchProps<T extends FieldValues = FieldValues> extends Us
  */
 
 // ====================================================
-export const HookSwitch = <T extends FieldValues>({ gridProps, ...props }: HookSwitchProps<T>): React.ReactElement => {
+export const HookRating = <T extends FieldValues>({ gridProps, ...props }: HookRatingProps<T>): React.ReactElement => {
 	/**
 	 * if grid props are passed in we wrap the text field in a grid
 	 */
@@ -57,20 +55,18 @@ export const HookSwitch = <T extends FieldValues>({ gridProps, ...props }: HookS
 
 /**
  *
- * @description The actual component that is returned from the HookSwitch component
+ * @description The actual component that is returned from the HookRating component
  *
  */
 const Component = <T extends FieldValues>({
-	switchProps = {},
 	setValue,
-	labelProps,
 	trigger,
 	config = {},
 	gridProps,
-	label,
+	ratingProps = {},
 	...restC
-}: HookSwitchProps<T>) => {
-	const { onChange, ...rest } = switchProps;
+}: HookRatingProps<T>) => {
+	const { onChange, ...rest } = ratingProps;
 
 	/**
 	 * we don't want to pass onChange to the Switch
@@ -83,13 +79,24 @@ const Component = <T extends FieldValues>({
 	return (
 		<Controller
 			{...restC}
-			render={({ field: { onChange: onChangeI, value = false } }) => (
-				<FormControlLabel
-					{...labelProps}
-					label={label}
-					control={<Switch checked={value} {...rest} onChange={callAll(onChangeI, onChangeRef.current)} />}
+			render={({ field: { onChange: onChangeI, value = 0 } }) => (
+				<Rating
+					{...rest}
+					value={value}
+					onChange={callAll(
+						onChangeRef.current,
+						(_event: React.SyntheticEvent<Element, Event>, value: number | null) => {
+							onChangeI({
+								target: {
+									value: value,
+								},
+							});
+						}
+					)}
 				/>
 			)}
 		/>
 	);
 };
+
+export default HookRating;

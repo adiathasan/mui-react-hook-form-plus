@@ -1,4 +1,6 @@
-# mui-react-hook-form-plus
+# `Material-UI` and `react-hook-form` combined and more... 
+
+
 The complete type-safe MUI and react-hook-form combo and beyond with simple API.
 
 #### Highly Customizable and supports 99% use-cases

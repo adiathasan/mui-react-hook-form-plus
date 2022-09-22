@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-
-import HookSwitch from '@components/HookSwitch';
 import { Grid } from '@mui/material';
 import { useWatch } from 'react-hook-form';
+import { storiesOf } from '@storybook/react';
+
+import { HookSwitch } from '@components/HookSwitch';
 import { useHookForm } from '@lib/react-hook-form/useHookForm';
 
 const stories = storiesOf('HookSwitch', module);
