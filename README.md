@@ -16,6 +16,8 @@ The complete type-safe MUI and react-hook-form combo and beyond with simple API.
 >>
 >> ```<HookCheckBox />```
 >>
+>> ```<HookSelect />```
+>>
 >> ```<HookSwitch />```
 >>
 >> ```<HookRating />```
