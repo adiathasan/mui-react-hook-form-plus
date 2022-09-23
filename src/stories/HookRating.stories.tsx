@@ -35,7 +35,6 @@ stories.add('@HookRating', () => {
 				</a>{' '}
 				hooked up with react-hook-form
 			</h2>
-			<br />
 			<h3>Learn How we use `ratingProps` and `gridProps`</h3>
 			<Grid container columnSpacing={{ xs: 1, md: 3 }}>
 				<HookRating

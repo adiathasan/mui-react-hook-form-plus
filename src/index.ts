@@ -1,5 +1,5 @@
 export { useFillFormValues } from './lib/react-hook-form/useFillFormValues';
-export { UseHookFormRegisterFn, useHookForm } from './lib/react-hook-form/useHookForm';
+export { UseHookFormRegisterFn, useHookForm, SetValuesFn } from './lib/react-hook-form/useHookForm';
 
 export { HookRating, HookRatingProps } from './components/HookRating';
 export { HookSlider, HookSliderProps } from './components/HookSlider';

@@ -69,9 +69,9 @@ const Component = <T extends FieldValues>({
 	const { onChange, ...rest } = ratingProps;
 
 	/**
-	 * we don't want to pass onChange to the Slider
+	 * we don't want to pass onChange to the Rating
 	 * we want to use the hook-form onChange
-	 * But we also want to keep the onChange passed in the sliderProps
+	 * But we also want to keep the onChange passed in the ratingProps
 	 * So we use callAll to merge the two
 	 */
 	const onChangeRef = React.useRef(onChange);

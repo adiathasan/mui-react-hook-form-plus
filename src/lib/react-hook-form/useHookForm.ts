@@ -21,7 +21,7 @@ import { useFillFormValues } from './useFillFormValues';
  *
  * @param {UseFormProps} props - the props of the hook as defined in the useForm hook
  *
- * @returns a custom **registerState** ``function`` is returned with all the methods of the original *react-hook-form*
+ * @returns a custom **registerState** | **setValues** ``method`` is returned with all the methods of the original *react-hook-form*
  *
  * @see https://react-hook-form.com/api/useform
  */
@@ -70,9 +70,9 @@ export function useHookForm<TFieldValues extends FieldValues = FieldValues, TCon
 /**
  * This is used if you want to pass registerState to a component
  *
- * const { registerState } = useHookForm<IFormState>()
+ * const { registerState } = useHookForm<IFormState>({defaultValues: {name: ''}})
  *
- * Example: <MyComponent registerState={registerState} />
+ * Example: <MyComponent {...registerState('name')} />
  *
  * interface MyComponentProps {
  *   registerState: UseHookFormRegisterFn<IFormState>
@@ -87,3 +87,8 @@ export type UseHookFormRegisterFn<TFieldValues extends FieldValues = FieldValues
 	setValue: UseFormSetValue<TFieldValues>;
 	formState: FormState<TFieldValues>;
 };
+
+export type SetValuesFn<TFieldValues extends FieldValues = FieldValues> = (
+	data: Partial<TFieldValues>,
+	includeKeys?: 'ALL' | (keyof TFieldValues)[]
+) => void;

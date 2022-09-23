@@ -1,36 +1,36 @@
 import * as React from 'react';
-import {Controller, FieldPath, FieldValues, FormState, UseControllerProps,} from 'react-hook-form';
+import { Controller, FieldPath, FieldValues, FormState, UseControllerProps } from 'react-hook-form';
 import {
-    Checkbox,
-    CheckboxProps,
-    FormControl,
-    FormControlLabel,
-    FormControlLabelProps,
-    FormHelperText,
-    FormLabel,
-    Grid,
-    GridProps,
+	Checkbox,
+	CheckboxProps,
+	FormControl,
+	FormControlLabel,
+	FormControlLabelProps,
+	FormHelperText,
+	FormLabel,
+	Grid,
+	GridProps,
 } from '@mui/material';
 
-import {callAll} from "@utils/misc";
+import { callAll } from '@utils/misc';
 
 export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends Omit<UseControllerProps<T>, 'rules'> {
-    checkBoxProps?: CheckboxProps;
-    formControlLabelProps?: Omit<FormControlLabelProps, 'control'>;
-    gridProps?: GridProps;
-    formHelperText?: string;
-    groupCheckProps?: {
-        name: FieldPath<T>;
-        checkBoxProps?: CheckboxProps;
-        formControlLabelProps?: Omit<FormControlLabelProps, 'control'>;
-    }[];
-    formState: FormState<T>;
-    label?: string;
-    disabled?: any;
-    error?: {
-        value: boolean
-        message?: string
-    }
+	checkBoxProps?: CheckboxProps;
+	formControlLabelProps?: Omit<FormControlLabelProps, 'control'>;
+	gridProps?: GridProps;
+	formHelperText?: string;
+	groupCheckProps?: {
+		name: FieldPath<T>;
+		checkBoxProps?: CheckboxProps;
+		formControlLabelProps?: Omit<FormControlLabelProps, 'control'>;
+	}[];
+	formState: FormState<T>;
+	label?: string;
+	disabled?: any;
+	error?: {
+		value: boolean;
+		message?: string;
+	};
 }
 
 // ====================================================
@@ -52,18 +52,18 @@ export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends 
 // ====================================================
 
 export const HookCheckBox = <T extends FieldValues>({
-                                                        gridProps,
-                                                        ...props
-                                                    }: HookCheckBoxProps<T>): React.ReactElement => {
-    if (gridProps) {
-        return (
-            <Grid item {...gridProps}>
-                <Component {...props} />
-            </Grid>
-        );
-    }
+	gridProps,
+	...props
+}: HookCheckBoxProps<T>): React.ReactElement => {
+	if (gridProps) {
+		return (
+			<Grid item {...gridProps}>
+				<Component {...props} />
+			</Grid>
+		);
+	}
 
-    return <Component {...props} />;
+	return <Component {...props} />;
 };
 
 /**
@@ -74,84 +74,80 @@ export const HookCheckBox = <T extends FieldValues>({
  *
  */
 const Component = <T extends FieldValues>({
-                                              formState: {errors: _errors},
-                                              checkBoxProps = {},
-                                              label,
-                                              disabled,
-                                              formHelperText,
-                                              groupCheckProps,
-                                              formControlLabelProps = {label: undefined},
-                                              error,
-                                              ...restC
-                                          }: HookCheckBoxProps<T>) => {
-    const {onChange} = checkBoxProps;
+	formState: { errors: _errors },
+	checkBoxProps = {},
+	label,
+	disabled,
+	formHelperText,
+	groupCheckProps,
+	formControlLabelProps = { label: undefined },
+	error,
+	...restC
+}: HookCheckBoxProps<T>) => {
+	const { onChange, ...restCheckBox } = checkBoxProps;
 
-    /**
-     * we don't want to pass onChange to the CheckBox
-     * we want to use the hook-form onChange,
-     * but we also want to keep the onChange passed in the checkBoxProps,
-     * so we use callAll to merge the two
-     */
-    const onChangeRef = React.useRef(onChange);
-    /**
-     * we update the ref on every render
-     */
-    onChangeRef.current = onChange;
+	/**
+	 * we don't want to pass onChange to the CheckBox
+	 * we want to use the hook-form onChange,
+	 * but we also want to keep the onChange passed in the checkBoxProps,
+	 * so we use callAll to merge the two
+	 */
+	const onChangeRef = React.useRef(onChange);
+	/**
+	 * we update the ref on every render
+	 */
+	onChangeRef.current = onChange;
 
-    return (
-        <FormControl component='fieldset' error={!!error?.value}>
-            {label && <FormLabel component='legend'>{label}</FormLabel>}
-            {
-                !!groupCheckProps ? (
-                    groupCheckProps.map(({name, checkBoxProps, formControlLabelProps}) => (
-                        <React.Fragment key={name}>
-                            <Controller
-                                {...restC}
-                                name={name}
-                                render={({field: {onChange: onChangeI, name, value = false, ref}}) => (
-                                    <>
-                                        <FormControlLabel
-                                            {...formControlLabelProps as any}
-                                            control={
-                                                <Checkbox
-                                                    ref={ref}
-                                                    name={name}
-                                                    checked={value}
-                                                    {...checkBoxProps}
-                                                    onChange={callAll(onChangeI, onChangeRef.current)}
-                                                />
-                                            }
-                                        />
-                                    </>
-                                )}
-                            />
-                        </React.Fragment>
-                    ))
-                ) : (
-                    <Controller
-                        {...restC}
-                        render={({field: {onChange: onChangeI, name, value = false, ref}}) => (
-                            <>
-                                <FormControlLabel
-                                    {...formControlLabelProps}
-                                    control={
-                                        <Checkbox
-                                            ref={ref}
-                                            name={name}
-                                            checked={value}
-                                            {...checkBoxProps}
-                                            onChange={callAll(onChangeI, onChangeRef.current)}
-                                        />
-                                    }
-                                />
-                            </>
-                        )}
-                    />
-                )
-            }
-            <FormHelperText>{(!!error?.value && error?.message) || formHelperText}</FormHelperText>
-        </FormControl>
-
-    );
+	return (
+		<FormControl component='fieldset' error={!!error?.value}>
+			{label && <FormLabel component='legend'>{label}</FormLabel>}
+			{!!groupCheckProps ? (
+				groupCheckProps.map(({ name, checkBoxProps, formControlLabelProps }) => (
+					<React.Fragment key={name}>
+						<Controller
+							{...restC}
+							name={name}
+							render={({ field: { onChange: onChangeI, name, value = false, ref } }) => (
+								<>
+									<FormControlLabel
+										{...(formControlLabelProps as any)}
+										control={
+											<Checkbox
+												ref={ref}
+												name={name}
+												checked={value}
+												{...restCheckBox}
+												onChange={callAll(onChangeI, onChangeRef.current)}
+											/>
+										}
+									/>
+								</>
+							)}
+						/>
+					</React.Fragment>
+				))
+			) : (
+				<Controller
+					{...restC}
+					render={({ field: { onChange: onChangeI, name, value = false, ref } }) => (
+						<>
+							<FormControlLabel
+								{...formControlLabelProps}
+								control={
+									<Checkbox
+										ref={ref}
+										name={name}
+										checked={value}
+										{...checkBoxProps}
+										onChange={callAll(onChangeI, onChangeRef.current)}
+									/>
+								}
+							/>
+						</>
+					)}
+				/>
+			)}
+			<FormHelperText>{(!!error?.value && error?.message) || formHelperText}</FormHelperText>
+		</FormControl>
+	);
 };
-

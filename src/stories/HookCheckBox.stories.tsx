@@ -36,7 +36,6 @@ stories.add('@HookCheckBox', () => {
 				</a>{' '}
 				hooked up with react-hook-form
 			</h2>
-			<br />
 			<h3>Learn How we display `label` and use `gridProps`</h3>
 			<Grid container columnSpacing={{ xs: 1, md: 3 }}>
 				<HookCheckBox
