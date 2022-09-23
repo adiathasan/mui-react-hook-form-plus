@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { GridProps, Grid, Rating, RatingProps } from '@mui/material';
-
-import { callAll } from '@utils/misc';
+import { GridProps, Grid } from '@mui/material';
+import Slider, { SliderProps } from '@mui/material/Slider';
 
 import {
 	Controller,
@@ -12,8 +11,10 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
-export interface HookRatingProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
-	ratingProps?: RatingProps;
+import { callAll } from '@utils/misc';
+
+export interface HookSliderProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+	sliderProps?: Partial<SliderProps>;
 	formState?: FormState<T>;
 	gridProps?: GridProps;
 	setValue?: UseFormSetValue<T>;
@@ -29,7 +30,7 @@ export interface HookRatingProps<T extends FieldValues = FieldValues> extends Us
 /**
  *
  * @description A text input field that uses react-hook-form to manage the form state.
- * @param {HookRatingProps}
+ * @param {HookSliderProps}
  *
  * formState: The form state to use from the useHookForm hook that we are using.
  *
@@ -38,7 +39,7 @@ export interface HookRatingProps<T extends FieldValues = FieldValues> extends Us
  */
 
 // ====================================================
-export const HookRating = <T extends FieldValues>({ gridProps, ...props }: HookRatingProps<T>): React.ReactElement => {
+export const HookSlider = <T extends FieldValues>({ gridProps, ...props }: HookSliderProps<T>): React.ReactElement => {
 	/**
 	 * if grid props are passed in we wrap the text field in a grid
 	 */
@@ -55,7 +56,7 @@ export const HookRating = <T extends FieldValues>({ gridProps, ...props }: HookR
 
 /**
  *
- * @description The actual component that is returned from the HookRating component
+ * @description The actual component that is returned from the HookSlider component
  *
  */
 const Component = <T extends FieldValues>({
@@ -63,10 +64,10 @@ const Component = <T extends FieldValues>({
 	trigger,
 	config = {},
 	gridProps,
-	ratingProps = {},
+	sliderProps = {},
 	...restC
-}: HookRatingProps<T>) => {
-	const { onChange, ...rest } = ratingProps;
+}: HookSliderProps<T>) => {
+	const { onChange, ...rest } = sliderProps;
 
 	/**
 	 * we don't want to pass onChange to the Slider
@@ -80,23 +81,20 @@ const Component = <T extends FieldValues>({
 		<Controller
 			{...restC}
 			render={({ field: { onChange: onChangeI, value = 0 } }) => (
-				<Rating
+				<Slider
 					{...rest}
 					value={value}
-					onChange={callAll(
-						onChangeRef.current,
-						(_event: React.SyntheticEvent<Element, Event>, value: number | null) => {
-							onChangeI({
-								target: {
-									value,
-								},
-							});
-						}
-					)}
+					onChange={callAll(onChangeRef.current, (_event: Event, value: number | number[], _activeThumb: number) => {
+						onChangeI({
+							target: {
+								value,
+							},
+						});
+					})}
 				/>
 			)}
 		/>
 	);
 };
 
-export default HookRating;
+export default HookSlider;

@@ -10,15 +10,17 @@ The complete type-safe MUI and react-hook-form combo and beyond with simple API.
 
 >## Components available 
 >
->> ```<HookTextField />```
->>
 >> ```<HookRadioButton />```
+>>
+>> ```<HookTextField />```
 >>
 >> ```<HookCheckBox />```
 >>
 >> ```<HookSwitch />```
 >>
 >> ```<HookRating />```
+>>
+>> ```<HookSlider />```
 >------
 >
 
