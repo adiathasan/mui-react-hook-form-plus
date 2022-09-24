@@ -13,7 +13,7 @@ import {
 
 import { callAll } from '@utils/misc';
 
-export interface HookSliderProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+export interface HookSliderProps<T extends FieldValues = FieldValues> extends Omit<UseControllerProps<T>, 'rules'> {
 	sliderProps?: Partial<SliderProps>;
 	formState?: FormState<T>;
 	gridProps?: GridProps;

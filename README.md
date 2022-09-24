@@ -13,6 +13,8 @@
 
 >## Components available 
 >
+>> ```<HookToggleButtonGroup />```
+>>
 >> ```<HookRadioButton />```
 >>
 >> ```<HookTextField />```

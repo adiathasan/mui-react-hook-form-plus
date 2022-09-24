@@ -35,7 +35,6 @@ export interface HookSelectProps<T extends FieldValues = FieldValues> extends Us
 	items?: { label: string; value: string }[];
 	renderItem?: (item: { label: string; value: string }) => React.ReactNode;
 	defaultValue?: UnpackNestedValue<PathValue<T, Path<T>>>;
-	disabled?: any;
 }
 
 // ====================================================
@@ -81,7 +80,6 @@ const Component = <T extends FieldValues>({
 	formControlProps = {},
 	items,
 	label,
-	disabled,
 	renderItem,
 	formHelperText,
 	...restC

@@ -12,7 +12,7 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
-export interface HookRatingProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+export interface HookRatingProps<T extends FieldValues = FieldValues> extends Omit<UseControllerProps<T>, 'rules'> {
 	ratingProps?: RatingProps;
 	formState?: FormState<T>;
 	gridProps?: GridProps;

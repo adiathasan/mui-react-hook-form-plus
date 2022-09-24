@@ -12,7 +12,7 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
-export interface HookSwitchProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+export interface HookSwitchProps<T extends FieldValues = FieldValues> extends Omit<UseControllerProps<T>, 'rules'> {
 	switchProps?: SwitchProps;
 	labelProps?: Omit<FormControlLabelProps, 'control' | 'label'>;
 	label?: React.ReactNode;

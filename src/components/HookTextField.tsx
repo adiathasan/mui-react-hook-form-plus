@@ -9,9 +9,8 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
-import { TextField, TextFieldProps } from '@lib/mui/TextField';
-import { Grid, GridProps } from '@lib/mui/Grid';
 import { callAll } from '@utils/misc';
+import { Grid, GridProps, TextField, TextFieldProps } from '@mui/material';
 
 export interface HookTextFieldProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
 	textFieldProps?: TextFieldProps & {

@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Button, Grid } from '@mui/material';
 
 import { HookTextField } from '@components/HookTextField';
-import { Button, Grid } from '@mui/material';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
 import { jsonStringify } from '@utils/misc';
+import { useHookForm } from '@lib/react-hook-form/useHookForm';
 
 const stories = storiesOf('HookTextField', module);
 
 stories.add('@HookTextField', () => {
 	// import { Button, Grid } from '@mui/material';
-	// import { HookTextField, useHookForm } from '@mui-react-hook-form-plus ';
+	// import { HookTextField, useHookForm } from 'mui-react-hook-form-plus ';
 
 	const defaultValues = {
 		person: {
@@ -29,7 +29,8 @@ stories.add('@HookTextField', () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<h3>This is a text field hooked up with react-hook-form</h3>
+			<h2>This is a `TextField` hooked up with `react-hook-form`</h2>
+			<h3>Learn how we use `textFieldProps` 🐭</h3>
 			<Grid container spacing={3}>
 				<HookTextField
 					{...registerState('person.firstName')}

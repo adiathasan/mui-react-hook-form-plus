@@ -14,7 +14,7 @@ import {
 
 import { callAll } from '@utils/misc';
 
-export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends Omit<UseControllerProps<T>, 'rules'> {
+export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
 	checkBoxProps?: CheckboxProps;
 	formControlLabelProps?: Omit<FormControlLabelProps, 'control'>;
 	gridProps?: GridProps;

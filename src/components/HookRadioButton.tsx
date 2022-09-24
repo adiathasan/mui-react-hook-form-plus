@@ -68,7 +68,7 @@ export const HookRadioButton = <T extends FieldValues>({
 
 /**
  *
- * @description The actual component that is returned from the HookInputRadio component
+ * @description The actual component that is returned from the HookRadioButton component
  *
  * @danger do not remove {formState: { errors }} from props as it is subscribed to the state
  *

@@ -9,3 +9,4 @@ export { HookSelect, HookSelectProps } from './components/HookSelect';
 export { HookCheckBoxProps, HookCheckBox } from './components/HookCheckBox';
 export { HookTextField, HookTextFieldProps } from './components/HookTextField';
 export { HookRadioButton, HookRadioButtonProps } from './components/HookRadioButton';
+export { HookToggleButtonGroup, HookToggleButtonGroupProps } from './components/HookToggleButtonGroup';
