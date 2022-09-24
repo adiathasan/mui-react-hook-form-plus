@@ -5,6 +5,7 @@ import {
 	AutocompleteChangeReason,
 	AutocompleteProps,
 	AutocompleteRenderInputParams,
+	AutocompleteValue,
 	Grid,
 	GridProps,
 	TextField,
@@ -22,7 +23,7 @@ import {
 import { Optional } from '@utils/types';
 import { callAll } from '../utils/misc';
 
-export interface ISearchSelectProps<
+export interface HookAutoCompleteProps<
 	A,
 	Multiple extends boolean | undefined,
 	DisableClearable extends boolean | undefined,
@@ -55,14 +56,14 @@ type HookAutoCompletePropType<
 	DisableClearable extends boolean | undefined,
 	FreeSolo extends boolean | undefined,
 	T extends FieldValues
-> = ISearchSelectProps<A, Multiple, DisableClearable, FreeSolo, T>;
+> = HookAutoCompleteProps<A, Multiple, DisableClearable, FreeSolo, T>;
 
 // ====================================================
 
 /**
  *
  * @description A searchable select field that uses react-hook-form to manage the form state.
- * @param {ISearchSelectProps}
+ * @param {HookAutoCompleteProps}
  *
  * formState: The form state to use from the useHookForm hook that we are using.
  * autocompleteProps: The props to pass to the Autocomplete component
@@ -114,7 +115,7 @@ const Component = <
 	setValue,
 	trigger,
 	config = {},
-	formState: { errors },
+	formState: { errors: _errors },
 	gridProps,
 	autocompleteProps,
 	noWrapper,
@@ -125,7 +126,7 @@ const Component = <
 	const { onChange, ...restAuto } = autocompleteProps;
 
 	/**
-	 * we don't want to pass onChange & onBlur to the AutoComplete
+	 * we don't want to pass onChange to the AutoComplete
 	 * we want to use the hook-form onChange
 	 * But we also want to keep the onChange passed in the autoCompleteProps
 	 * So we use callAll to merge the two
@@ -141,7 +142,7 @@ const Component = <
 				field: { onChange: onChangeI, onBlur: onBlurI, value = autocompleteProps.options[0], ref, name },
 			}) => (
 				<Autocomplete
-					value={value as any}
+					value={value as AutocompleteValue<A, Multiple, DisableClearable, FreeSolo>}
 					{...restAuto}
 					onChange={callAll(
 						onChangeRef.current,
