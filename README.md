@@ -1,9 +1,9 @@
 # The perfect recipe with `Material-UI` 💙 `TS` 💙 `react-hook-form` and more... 
 <br/>
 
-### Material-UI - A library of React UI components that implements Google's Material Design
+### ```Material-UI``` - A library of React UI components that implements Google's Material Design
 
-### react-hook-form - A form library considered as performant, flexible and extensible forms with easy-to-use validation
+### ```react-hook-form``` - A form library considered as performant, flexible and extensible forms with easy-to-use validation
 
 ### The complete type-safe MUI and react-hook-form combo and beyond with simple API.
 
