@@ -1,6 +1,6 @@
 {
   "name": "mui-react-hook-form-plus",
-  "version": "0.0.94",
+  "version": "0.0.95",
   "description": "The complete type-safe MUI and react-hook-form combo and beyond with simple API",
   "main": "dist/index.js",
   "scripts": {
