@@ -8,13 +8,10 @@
 <br/>
 
 ### The complete type-safe MUI and react-hook-form combo and beyond with simple API.
-<br/>
 
 ### Highly Customizable and supports 99% use-cases
-<br/>
 
 ### This is in **BETA** 
-<br/>
 
 >## Components available 
 >
@@ -39,8 +36,6 @@
 >> ```useHookForm```
 >>
 >> ```useHookFormContext```
->>
->> ```<HookSlider />```
 >------
 >
 
