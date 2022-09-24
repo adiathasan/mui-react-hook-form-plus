@@ -1,5 +1,4 @@
-export { FormProvider as HookFormProvider } from 'react-hook-form';
-
+export { HookFormProvider } from './lib/react-hook-form/HookFormProvider';
 export { useFillFormValues } from './lib/react-hook-form/useFillFormValues';
 export { useHookFormContext } from './lib/react-hook-form/useHookFormContext';
 export { UseHookFormRegisterFn, useHookForm, SetValuesFn } from './lib/react-hook-form/useHookForm';
