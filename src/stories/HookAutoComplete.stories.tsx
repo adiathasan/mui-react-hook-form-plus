@@ -13,11 +13,27 @@ stories.add('@HookAutoComplete', () => {
 	// import { Button, Grid } from '@mui/material';
 	// import { HookAutoComplete, useHookForm } from 'mui-react-hook-form-plus ';
 
+	/**
+	 * (alias) const top100Films: {
+    		label: string;
+    		year: number;
+		}[]
+		
+		import top100Films
+	 */
+
+	interface DefaultValues {
+		movie: {
+			label: string;
+			year: number;
+		} | null;
+	}
+
 	const defaultValues = {
 		movie: null,
 	};
 
-	const { registerState, handleSubmit } = useHookForm({
+	const { registerState, handleSubmit } = useHookForm<DefaultValues>({
 		defaultValues,
 	});
 
@@ -27,8 +43,8 @@ stories.add('@HookAutoComplete', () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<h2>This is a `TextField` hooked up with `react-hook-form`</h2>
-			<h3>Learn how we use `textFieldProps` 🐭</h3>
+			<h2>This is a `AutoComplete` hooked up with `react-hook-form`</h2>
+			<h3>Learn how we use `autocompleteProps` & `textFieldProps` 🚗</h3>
 			<Grid container spacing={3} sx={{ minHeight: 120 }}>
 				<HookAutoComplete
 					{...registerState('movie')}
