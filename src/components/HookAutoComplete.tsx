@@ -4,7 +4,6 @@ import {
 	AutocompleteChangeDetails,
 	AutocompleteChangeReason,
 	AutocompleteProps,
-	AutocompleteRenderInputParams,
 	AutocompleteValue,
 	Grid,
 	GridProps,
@@ -162,6 +161,15 @@ const Component = <
 									<TextField
 										{...textFieldProps}
 										{...params}
+										InputProps={{
+											...params.InputProps,
+											endAdornment: (
+												<>
+													{textFieldProps?.InputProps?.endAdornment ?? null}
+													{params.InputProps.endAdornment}
+												</>
+											),
+										}}
 										aria-invalid={!!error ? 'true' : 'false'}
 										error={!!error}
 										helperText={error?.message}
