@@ -147,9 +147,9 @@ const Component = <
 						onChangeRef.current,
 						(
 							_event: React.SyntheticEvent<Element, Event>,
-							value: any,
+							value: A,
 							_reason: AutocompleteChangeReason,
-							_details?: AutocompleteChangeDetails<any> | undefined
+							_details?: AutocompleteChangeDetails<A> | undefined
 						) => {
 							onChangeI({ target: { value } });
 						}
