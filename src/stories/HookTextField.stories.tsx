@@ -4,7 +4,7 @@ import { Button, Grid } from '@mui/material';
 
 import { HookTextField } from '@components/HookTextField';
 import { jsonStringify } from '@utils/misc';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 
 const stories = storiesOf('HookTextField', module);
 

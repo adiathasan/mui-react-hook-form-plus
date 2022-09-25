@@ -1,13 +1,25 @@
-## The perfect recipe with `Material-UI` 💙 `TS` 💙 `react-hook-form` and more... 
-<br/>
+### The perfect recipe with `material-ui`💙`TS`💙`react-hook-form` & more... 
+(https://raw.githubusercontent.com/adiathasan/mui-react-hook-form-plus/master/mui-react-hook-form-plus.webp)](https://raw.githubusercontent.com/adiathasan/mui-react-hook-form-plus/master/mui-react-hook-form-plus.webp)
 
-### ```Material-UI``` - A library of React UI components that implements Google's Material Design
+The complete `type-safe` `material-ui` and `react-hook-form` combo and beyond with simple api.
 
-### ```react-hook-form``` - A form library considered as performant, flexible and extensible forms with easy-to-use validation
+Highly Customizable and supports 99% use-cases
 
-### The complete type-safe MUI and react-hook-form combo and beyond with simple API.
+[![npm version](https://badge.fury.io/js/mui-react-hook-form-plus.svg)](https://badge.fury.io/js/mui-react-hook-form-plus)
 
-### Highly Customizable and supports 99% use-cases
+[Trying It Out](https://www.npmjs.com/package/mui-react-hook-form-plus)
+
+[Click here](https://mui-react-hook-form-plus.vercel.app/?path=/docs/) to see a live example!
+
+Before Installing we need [material-ui](https://mui.com/material-ui/getting-started/installation/) & [react-hook-form](https://react-hook-form.com/get-started)
+
+#### [Install](https://www.npmjs.com/package/mui-react-hook-form-plus#install)
+
+```source-shell
+npm install mui-react-hook-form-plus
+---- or ----
+yarn add mui-react-hook-form-plus
+```
 
 >## Components available 
 >

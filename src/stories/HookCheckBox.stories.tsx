@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { useWatch } from 'react-hook-form';
 import { storiesOf } from '@storybook/react';
 import { Button, Grid } from '@mui/material';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { HookCheckBox } from '@components/HookCheckBox';
 import { jsonStringify } from '@utils/misc';
-import { useWatch } from 'react-hook-form';
 
 const stories = storiesOf('HookCheckBox', module);
 

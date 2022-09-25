@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Button, Grid } from '@mui/material';
 
 import { HookRating } from '@components/HookRating';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { jsonStringify } from '@utils/misc';
 
 const stories = storiesOf('HookRating', module);

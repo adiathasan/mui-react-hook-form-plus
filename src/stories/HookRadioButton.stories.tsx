@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { HookTextField } from '@components/HookTextField';
 import { Button, Grid } from '@mui/material';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { HookRadioButton } from '@components/HookRadioButton';
 import { jsonStringify } from '@utils/misc';
 

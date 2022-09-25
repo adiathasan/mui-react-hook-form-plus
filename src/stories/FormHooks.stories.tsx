@@ -6,10 +6,10 @@ import { FormProvider as HookFormProvider } from 'react-hook-form';
 
 import HookRating from '@components/HookRating';
 import { HookSelect } from '@components/HookSelect';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { HookTextField } from '@components/HookTextField';
 import { jsonStringify } from '@utils/misc';
-import { useHookFormContext } from '@lib/react-hook-form/useHookFormContext';
+import { useHookFormContext } from '@lib/react-hook-form/hooks/useHookFormContext';
 
 const stories = storiesOf('Form Hooks', module);
 

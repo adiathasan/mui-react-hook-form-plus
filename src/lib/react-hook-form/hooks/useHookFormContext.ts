@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FieldPath, FieldValues, useFormContext } from 'react-hook-form';
 
-import { useFillFormValues } from './useFillFormValues';
+import { useFillFormValues } from '../hooks/useFillFormValues';
 
 export const useHookFormContext = <TFieldValues extends FieldValues>() => {
 	const form = useFormContext<TFieldValues>();

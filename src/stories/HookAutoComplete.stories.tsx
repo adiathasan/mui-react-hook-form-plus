@@ -4,7 +4,7 @@ import { Button, CircularProgress, Grid } from '@mui/material';
 
 import { HookAutoComplete } from '@components/HookAutoComplete';
 import { jsonStringify, sleep } from '@utils/misc';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { top100Films } from '@utils/auto-complete-mock';
 
 const stories = storiesOf('HookAutoComplete ⌨', module);

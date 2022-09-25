@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { ToggleButton } from '@mui/material';
 
 import { HookToggleButtonGroup } from '@components/HookToggleButtonGroup';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 
 const stories = storiesOf('HookToggleButtonGroup', module);
 

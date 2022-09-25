@@ -4,7 +4,7 @@ import { useWatch } from 'react-hook-form';
 import { storiesOf } from '@storybook/react';
 
 import { HookSwitch } from '@components/HookSwitch';
-import { useHookForm } from '@lib/react-hook-form/useHookForm';
+import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 
 const stories = storiesOf('HookSwitch', module);
 
