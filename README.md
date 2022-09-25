@@ -32,7 +32,7 @@ We use `propGetter` pattern just like `react-hook-form` is doing by `registering
 2. From `useHookForm` get the `registerState` method.
 3. Call the `registerState` method with `name` as `argument` that you want to `register` the `field` to with `spread operator`.
 
-Fore more clear-cut answer `follow` the example below:
+For more clear-cut answer `follow` the example below:
 
 ```tsx
 import { HookTextField, HookRating, useHookForm } from 'mui-react-hook-form-plus ';
