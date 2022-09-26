@@ -280,3 +280,7 @@ Check out [Hooks Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/m
 #### https://mui-react-hook-form-plus.vercel.app/?path=/docs/
 
 ### MORE IS COMING...
+
+### Open for contributions
+Just follow the `CONTRIBUTING.md` & you are good to go.
+

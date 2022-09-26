@@ -20,7 +20,10 @@
     "react",
     "react-hooks",
     "react-hook-form",
-    "mui"
+    "mui",
+    "typescript",
+    "forms",
+    "form-validation"
   ],
   "author": {
     "name": "Adiat Hasan <adiathasan.me@gmail.com>"
