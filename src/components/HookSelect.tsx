@@ -120,7 +120,7 @@ const Component = <T extends FieldValues>({
 						aria-label={name}
 						value={value}
 						name={name}
-						ref={ref}
+						inputRef={ref}
 						multiple={multiple}
 						onChange={callAll((e: SelectChangeEvent) => {
 							if (multiple) {
