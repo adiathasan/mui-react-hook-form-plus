@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build": "rollup -c",
+    "build": "yarn type-check && rollup -c",
     "build-storybook": "build-storybook",
     "push": "yarn build-storybook && git add . && git commit -m 'push - storybook - master - deploy - vercel' && git push origin master",
     "push-docs": "yarn build-storybook && git add . && git commit -m 'push - storybook - story - deploy - vercel' && git push origin story",
-    "chromatic": "npx chromatic --project-token=ce834c71045a"
+    "chromatic": "npx chromatic --project-token=ce834c71045a",
+    "type-check": "tsc --noEmit --pretty --incremental false"
   },
   "repository": {
     "type": "git",
