@@ -4,6 +4,8 @@
 
 Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/1) - "If the value of select is invalid caused by validation. and we press submit button. the select component doesn't get focused."
 
+`HookSelect.tsx`
+
 ```diff
 aria-label={name}
     value={value}
