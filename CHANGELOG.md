@@ -8,8 +8,11 @@ Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/3)
 
 ```diff
  "peerDependencies": {
--    "@mui/material": "^5.0.0",
--    "react-hook-form": "^7.35.0"
+-    "@babel/core": "^7.19.1",
+-    "@emotion/react": "^11.10.4",
+-    "@emotion/styled": "^11.10.4",
+-    "react": "^17.0.1",
+-    "react-dom": "^17.0.1",
  }
 ```
 
