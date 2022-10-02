@@ -1,20 +1,16 @@
 # Changelog
 
-# [1.0.1] - 9-27-2022
+# [1.0.3] - 10-2-2022
 
-Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/1) - "If the value of select is invalid caused by validation. and we press submit button. the select component doesn't get focused."
+Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/3) - "unmet `peerDependencies`"
 
-`HookSelect.tsx`
+`package.json`
 
 ```diff
-    aria-label={name}
-    value={value}
-    name={name}
--   ref={ref}
-+   inputRef={ref}
-    multiple={multiple}
-    onChange={callAll((e: SelectChangeEvent) => {
-        if (multiple) {
+ "peerDependencies": {
+-    "@mui/material": "^5.0.0",
+-    "react-hook-form": "^7.35.0"
+ }
 ```
 
 # [1.0.2] - 10-2-2022
@@ -42,15 +38,20 @@ Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/3)
  }
 ```
 
-# [1.0.3] - 10-2-2022
+# [1.0.1] - 9-27-2022
 
-Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/3) - "unmet `peerDependencies`"
+Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/1) - "If the value of select is invalid caused by validation. and we press submit button. the select component doesn't get focused."
 
-`package.json`
+`HookSelect.tsx`
 
 ```diff
- "peerDependencies": {
--    "@mui/material": "^5.0.0",
--    "react-hook-form": "^7.35.0"
- }
+    aria-label={name}
+    value={value}
+    name={name}
+-   ref={ref}
++   inputRef={ref}
+    multiple={multiple}
+    onChange={callAll((e: SelectChangeEvent) => {
+        if (multiple) {
 ```
+
