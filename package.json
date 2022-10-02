@@ -76,7 +76,7 @@
     "react-hook-form": ">= ^7.35.0"
   },
   "dependencies": {},
-  "_id": "mui-react-hook-form-plus@1.0.1",
+  "_id": "mui-react-hook-form-plus@1.0.2",
   "files": [
     "dist"
   ]
