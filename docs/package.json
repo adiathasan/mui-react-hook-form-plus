@@ -1,0 +1,31 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Docs for mui-react-hook-form-plus",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "debug": "NODE_OPTIONS='--inspect' next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "author": "Adiat Hasan",
+  "license": "MIT",
+  "dependencies": {
+    "@reach/skip-nav": "^0.16.0",
+    "focus-visible": "^5.1.0",
+    "intersection-observer": "^0.10.0",
+    "markdown-to-jsx": "^6.11.4",
+    "next": "^12.2.0",
+    "nextra": "^2.0.0-beta.6",
+    "nextra-theme-docs": "^2.0.0-beta.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-intersection-observer": "^8.26.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.23",
+    "@types/react": "^18.0.21",
+    "typescript": "^4.8.4"
+  }
+}

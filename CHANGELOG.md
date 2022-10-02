@@ -7,7 +7,7 @@ Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/1)
 `HookSelect.tsx`
 
 ```diff
-aria-label={name}
+    aria-label={name}
     value={value}
     name={name}
 -   ref={ref}
@@ -15,4 +15,29 @@ aria-label={name}
     multiple={multiple}
     onChange={callAll((e: SelectChangeEvent) => {
         if (multiple) {
+```
+
+# [1.0.2] - 9-27-2022
+
+Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/3) - "unmet `peerDependencies` with React 18"
+
+`package.json`
+
+```diff
+ "peerDependencies": {
+-    "@babel/core": "^7.19.1",
+-    "@emotion/react": "^11.10.4",
+-    "@emotion/styled": "^11.10.4",
+-    "@mui/material": "^5.0.0",
+-    "react": "^17.0.1",
+-    "react-dom": "^17.0.1",
+-    "react-hook-form": "^7.35.0"
++    "@babel/core": ">= ^7.19.1",
++    "@emotion/react": ">= ^11.10.4",
++    "@emotion/styled": ">= ^11.10.4",
++    "@mui/material": ">= ^5.0.0",
++    "react": ">= ^17.0.1",
++    "react-dom": ">= ^17.0.1",
++    "react-hook-form": ">= ^7.35.0"
+ }
 ```

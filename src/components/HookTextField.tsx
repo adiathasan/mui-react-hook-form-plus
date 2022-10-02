@@ -76,7 +76,7 @@ const Component = <T extends FieldValues>({
 	setValue,
 	trigger,
 	config = {},
-	formState: { errors },
+	formState: { errors: _e },
 	gridProps,
 	...restC
 }: HookTextFieldProps<T>) => {
