@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-	Controller,
-	FieldPath,
-	FieldValues,
-	FormState,
-	Path,
-	UseControllerProps,
-	UseFormSetFocus,
-} from 'react-hook-form';
+import { Controller, FieldPath, FieldValues, FormState, UseControllerProps } from 'react-hook-form';
 import {
 	ButtonBaseActions,
 	Checkbox,
@@ -40,7 +32,6 @@ export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends 
 		value: boolean;
 		message?: string;
 	};
-	setFocus: UseFormSetFocus<T>;
 }
 
 // ====================================================
@@ -89,7 +80,6 @@ const Component = <T extends FieldValues>({
 	label,
 	disabled,
 	formHelperText,
-	setFocus,
 	groupCheckProps,
 	formControlLabelProps = { label: undefined },
 	error,
@@ -110,30 +100,6 @@ const Component = <T extends FieldValues>({
 	 * we update the ref on every render
 	 */
 	onChangeRef.current = onChange;
-
-	React.useEffect(() => {
-		if (groupCheckProps && _errors) {
-			groupCheckProps.every((g) => {
-				const { error } = restC?.control?.getFieldState(g.name) ?? {};
-
-				if (!!error) {
-					actionRef.current[g.name]?.ref.focus();
-					actionRef.current[g.name]?.action.focusVisible();
-					return false;
-				}
-
-				return true;
-			});
-			return;
-		}
-
-		const { error } = restC?.control?.getFieldState(restC.name) ?? {};
-
-		if (!!error) {
-			actionRef.current[restC.name]?.ref.focus();
-			actionRef.current[restC.name]?.action.focusVisible();
-		}
-	}, [_errors, groupCheckProps]);
 
 	return (
 		<FormControl component='fieldset' error={!!error?.value}>
@@ -162,14 +128,7 @@ const Component = <T extends FieldValues>({
 														[name]: { action, ref: actionRef.current[name]?.ref },
 													};
 												}}
-												inputRef={(instance: HTMLInputElement) => {
-													actionRef.current = {
-														...actionRef.current,
-														[name]: { ref: instance, action: actionRef.current[name]?.action },
-													};
-
-													return ref;
-												}}
+												inputRef={ref}
 												name={name}
 												checked={value}
 												onChange={callAll(onChangeI, onChangeRef.current, checkBoxProps?.onChange)}
