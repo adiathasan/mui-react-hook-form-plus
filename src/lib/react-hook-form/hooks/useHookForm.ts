@@ -6,6 +6,7 @@ import {
 	FormState,
 	useForm,
 	UseFormProps,
+	UseFormSetFocus,
 	UseFormSetValue,
 	UseFormTrigger,
 } from 'react-hook-form';
@@ -36,7 +37,7 @@ export function useHookForm<TFieldValues extends FieldValues = FieldValues, TCon
 	 */
 	const form = useForm(props);
 
-	const { control, formState, setValue, trigger } = form;
+	const { control, formState, setValue, trigger, setFocus } = form;
 
 	/**
 	 * @description this function is used to register the state of the form inputs
@@ -50,6 +51,7 @@ export function useHookForm<TFieldValues extends FieldValues = FieldValues, TCon
 				name,
 				setValue,
 				trigger,
+				setFocus,
 			};
 		},
 		[control, formState, setValue, trigger]
@@ -86,6 +88,7 @@ export type UseHookFormRegisterFn<TFieldValues extends FieldValues = FieldValues
 	trigger: UseFormTrigger<TFieldValues>;
 	setValue: UseFormSetValue<TFieldValues>;
 	formState: FormState<TFieldValues>;
+	setFocus: UseFormSetFocus<TFieldValues>;
 };
 
 export type SetValuesFn<TFieldValues extends FieldValues = FieldValues> = (

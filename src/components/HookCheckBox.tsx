@@ -1,6 +1,15 @@
 import * as React from 'react';
-import { Controller, FieldPath, FieldValues, FormState, UseControllerProps } from 'react-hook-form';
 import {
+	Controller,
+	FieldPath,
+	FieldValues,
+	FormState,
+	Path,
+	UseControllerProps,
+	UseFormSetFocus,
+} from 'react-hook-form';
+import {
+	ButtonBaseActions,
 	Checkbox,
 	CheckboxProps,
 	FormControl,
@@ -14,7 +23,7 @@ import {
 
 import { callAll } from '@utils/misc';
 
-export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends UseControllerProps<T> {
+export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends Omit<UseControllerProps<T>, 'rules'> {
 	checkBoxProps?: CheckboxProps;
 	formControlLabelProps?: Omit<FormControlLabelProps, 'control'>;
 	gridProps?: GridProps;
@@ -31,6 +40,7 @@ export interface HookCheckBoxProps<T extends FieldValues = FieldValues> extends 
 		value: boolean;
 		message?: string;
 	};
+	setFocus: UseFormSetFocus<T>;
 }
 
 // ====================================================
@@ -79,11 +89,14 @@ const Component = <T extends FieldValues>({
 	label,
 	disabled,
 	formHelperText,
+	setFocus,
 	groupCheckProps,
 	formControlLabelProps = { label: undefined },
 	error,
 	...restC
 }: HookCheckBoxProps<T>) => {
+	const actionRef = React.useRef<{ [x: string]: { action: ButtonBaseActions; ref: HTMLInputElement } }>({});
+
 	const { onChange, ...restCheckBox } = checkBoxProps;
 
 	/**
@@ -98,6 +111,30 @@ const Component = <T extends FieldValues>({
 	 */
 	onChangeRef.current = onChange;
 
+	React.useEffect(() => {
+		if (groupCheckProps && _errors) {
+			groupCheckProps.every((g) => {
+				const { error } = restC?.control?.getFieldState(g.name) ?? {};
+
+				if (!!error) {
+					actionRef.current[g.name]?.ref.focus();
+					actionRef.current[g.name]?.action.focusVisible();
+					return false;
+				}
+
+				return true;
+			});
+			return;
+		}
+
+		const { error } = restC?.control?.getFieldState(restC.name) ?? {};
+
+		if (!!error) {
+			actionRef.current[restC.name]?.ref.focus();
+			actionRef.current[restC.name]?.action.focusVisible();
+		}
+	}, [_errors, groupCheckProps]);
+
 	return (
 		<FormControl component='fieldset' error={!!error?.value}>
 			{label && <FormLabel component='legend'>{label}</FormLabel>}
@@ -107,17 +144,35 @@ const Component = <T extends FieldValues>({
 						<Controller
 							{...restC}
 							name={name}
-							render={({ field: { onChange: onChangeI, name, value = false, ref } }) => (
+							rules={{
+								validate: () => {
+									return error?.value ? error.message : undefined;
+								},
+							}}
+							render={({ field: { onChange: onChangeI, value = false, ref } }) => (
 								<>
 									<FormControlLabel
 										{...(formControlLabelProps as any)}
 										control={
 											<Checkbox
-												ref={ref}
+												{...checkBoxProps}
+												action={(action: ButtonBaseActions) => {
+													actionRef.current = {
+														...actionRef.current,
+														[name]: { action, ref: actionRef.current[name]?.ref },
+													};
+												}}
+												inputRef={(instance: HTMLInputElement) => {
+													actionRef.current = {
+														...actionRef.current,
+														[name]: { ref: instance, action: actionRef.current[name]?.action },
+													};
+
+													return ref;
+												}}
 												name={name}
 												checked={value}
-												{...restCheckBox}
-												onChange={callAll(onChangeI, onChangeRef.current)}
+												onChange={callAll(onChangeI, onChangeRef.current, checkBoxProps?.onChange)}
 											/>
 										}
 									/>
@@ -129,16 +184,34 @@ const Component = <T extends FieldValues>({
 			) : (
 				<Controller
 					{...restC}
+					rules={{
+						validate: () => {
+							return error?.value ? error.message : undefined;
+						},
+					}}
 					render={({ field: { onChange: onChangeI, name, value = false, ref } }) => (
 						<>
 							<FormControlLabel
 								{...formControlLabelProps}
 								control={
 									<Checkbox
-										ref={ref}
+										{...restCheckBox}
+										action={(action: ButtonBaseActions) => {
+											actionRef.current = {
+												...actionRef.current,
+												[name]: { action, ref: actionRef.current[name]?.ref },
+											};
+										}}
+										inputRef={(instance: HTMLInputElement) => {
+											actionRef.current = {
+												...actionRef.current,
+												[name]: { ref: instance, action: actionRef.current[name]?.action },
+											};
+
+											return ref;
+										}}
 										name={name}
 										checked={value}
-										{...checkBoxProps}
 										onChange={callAll(onChangeI, onChangeRef.current)}
 									/>
 								}
