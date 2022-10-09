@@ -244,7 +244,7 @@ const Component = () => {
 ### Package installation:
 You need to install 3 different types of package to make the pickers work:
 
-1. The component (@mui/x-date-pickers or @mui/x-date-pickers-pro) manages the rendering.
+1. The component (@mui/x-date-pickers) manages the rendering.
 2. The date-library (moment, dayjs, ...) manages the date manipulation.
 3. The adapter (@date-io) exposes your favorite date-library under a unified api used by component.
 First you have to install the date-library you want to use to manage dates, and the component package:
