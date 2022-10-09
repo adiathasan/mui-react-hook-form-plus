@@ -23,7 +23,8 @@ export default [
 			'@mui/material/TextField',
 			'@mui/material/Grid',
 			'@mui/material',
-			'@mui/material/Slider'
+			'@mui/x-date-pickers',
+			'@mui/material/Slider',
 		],
 	},
 ];
