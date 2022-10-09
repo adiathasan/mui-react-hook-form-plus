@@ -1,5 +1,16 @@
 # Changelog
 
+# [1.1.0] - 10-9-2022
+
+Added DatePicker | [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/4) - "Support for DesktopDatePicker"
+> ### DatePicker
+1.  `<HookDatePicker />`
+2.  `<HookStaticDatePicker />`
+3.  `<HookDesktopDatePicker />`
+4.  `<HookMobileDatePicker />`
+
+
+
 # [1.0.3] - 10-2-2022
 
 Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/3) - "unmet `peerDependencies`"

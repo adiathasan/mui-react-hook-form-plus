@@ -25,6 +25,10 @@ export default [
 			'@mui/material',
 			'@mui/x-date-pickers',
 			'@mui/material/Slider',
+			'@mui/x-date-pickers/MobileDatePicker',
+			'@mui/x-date-pickers/DesktopDatePicker',
+			'@mui/x-date-pickers/StaticDatePicker',
+			'@mui/x-date-pickers/DatePicker',
 		],
 	},
 ];

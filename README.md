@@ -239,7 +239,39 @@ const Component = () => {
 }
 ```
 
-### Available Components
+> ### DatePicker
+
+### Package installation:
+You need to install 3 different types of package to make the pickers work:
+
+1. The component (@mui/x-date-pickers or @mui/x-date-pickers-pro) manages the rendering.
+2. The date-library (moment, dayjs, ...) manages the date manipulation.
+3. The adapter (@date-io) exposes your favorite date-library under a unified api used by component.
+First you have to install the date-library you want to use to manage dates, and the component package:
+
+```bash
+// Install component (community version)
+yarn add @mui/x-date-pickers
+
+// Install date library (if not already installed)
+yarn add date-fns
+```
+
+```tsx
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+
+const Component = () => {
+    return (
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<HookDatePicker {...registerState('trialEndsAt')}/>
+			</form>
+		</LocalizationProvider>
+    )
+}
+```
+
+> ## Available Input Components
 1. `<HookToggleButtonGroup />`
 2. `<HookAutoComplete />`
 3. `<HookRadioButton />`
@@ -251,6 +283,15 @@ const Component = () => {
 9. `<HookSlider />`
 
 Check out [Inputs Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/hooktextfield--hooktextfield)
+
+> ### DatePicker
+1.  `<HookDatePicker />`
+2.  `<HookStaticDatePicker />`
+3.  `<HookDesktopDatePicker />`
+4.  `<HookMobileDatePicker />`
+
+Check out [DatePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/datepicker--hookdatepicker)
+
 
 ### Form Hooks
 1. `useHookForm`
