@@ -1,5 +1,8 @@
 # Changelog
 
+# [1.1.2] - 10-10-2022
+
+Build changed form `rollup` -> `tsup`
 # [1.1.1] - 10-10-2022
 
 Modified package.json for @mui/x-date-pickers optional

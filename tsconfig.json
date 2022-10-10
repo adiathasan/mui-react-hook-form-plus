@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"jsx": "react",
 		"module": "ESNext",
-		"target": "es5",
+		"target": "ESNext",
 		"declaration": true,
 		"moduleResolution": "node",
 		"noImplicitReturns": true,

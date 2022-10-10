@@ -123,3 +123,5 @@ const Component = <TInputDate, TDate, T extends FieldValues = FieldValues>({
 		/>
 	);
 };
+
+export default HookDatePicker;
