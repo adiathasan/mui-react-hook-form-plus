@@ -14,7 +14,15 @@ Highly `Customizable` and supports 99% use-cases
 
 Before Installing we need to install [material-ui](https://mui.com/material-ui/getting-started/installation/) & [react-hook-form](https://react-hook-form.com/get-started)
 
+For date pickers
+
+```source-shell
+npm install @mui/x-date-pickers
+---- or ----
+yarn add @mui/x-date-pickers
+```
 #### Then [Install](https://www.npmjs.com/package/mui-react-hook-form-plus#install)
+
 
 ```source-shell
 npm install mui-react-hook-form-plus
