@@ -1,5 +1,21 @@
 # Changelog
 
+# [1.1.1] - 10-10-2022
+
+Modified package.json for @mui/x-date-pickers optional
+
+```diff
+  "peerDependencies": {
+    "@mui/material": ">=5.0.0",
+    "@mui/x-date-pickers": ">=5.0.4",
+    "react-hook-form": ">=7.33.1"
+  },
++  "peerDependenciesMeta": {
++    "@mui/x-date-pickers": {
++      "optional": true
++    }
++  }
+``` 
 # [1.1.0] - 10-9-2022
 
 Added DatePicker | [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/4) - "Support for DesktopDatePicker"
