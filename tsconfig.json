@@ -26,5 +26,5 @@
 		"skipLibCheck": true
 	},
 	"include": ["src"],
-	"exclude": ["node_modules", "dist", "example", "rollup.config.js", "storybook-static", "docs"]
+	"exclude": ["node_modules", "dist", "example", "rollup/rollup.config.js", "storybook-static", "docs"]
 }

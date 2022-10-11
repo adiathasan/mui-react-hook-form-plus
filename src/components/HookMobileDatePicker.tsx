@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Grid, GridProps, TextField, TextFieldProps } from '@mui/material';
-import { MobileDatePicker, MobileDatePickerProps } from '@mui/x-date-pickers/MobileDatePicker';
+import { MobileDatePicker, MobileDatePickerProps } from '@mui/x-date-pickers';
 import {
 	Controller,
 	FieldValues,

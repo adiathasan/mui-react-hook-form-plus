@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { GridProps, Grid } from '@mui/material';
-import Slider, { SliderProps } from '@mui/material/Slider';
+import { GridProps, Grid, Slider, SliderProps } from '@mui/material';
 
 import {
 	Controller,
