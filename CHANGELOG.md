@@ -1,4 +1,11 @@
 # Changelog
+# [1.1.6] - 10-11-2022
+
+Warning removed form `HookCheckBox` 
+
+```diff
+- Warning: Unexpected return value from a callback ref in input. A callback ref should not return a function.
+```
 # [1.1.5] - 10-11-2022
 
 Rollup build fix
