@@ -85,8 +85,6 @@ const Component = <T extends FieldValues>({
 	error,
 	...restC
 }: HookCheckBoxProps<T>) => {
-	const actionRef = React.useRef<{ [x: string]: { action: ButtonBaseActions; ref: HTMLInputElement } }>({});
-
 	const { onChange, ...restCheckBox } = checkBoxProps;
 
 	/**
@@ -122,12 +120,6 @@ const Component = <T extends FieldValues>({
 										control={
 											<Checkbox
 												{...checkBoxProps}
-												action={(action: ButtonBaseActions) => {
-													actionRef.current = {
-														...actionRef.current,
-														[name]: { action, ref: actionRef.current[name]?.ref },
-													};
-												}}
 												inputRef={ref}
 												name={name}
 												checked={value}
@@ -155,20 +147,7 @@ const Component = <T extends FieldValues>({
 								control={
 									<Checkbox
 										{...restCheckBox}
-										action={(action: ButtonBaseActions) => {
-											actionRef.current = {
-												...actionRef.current,
-												[name]: { action, ref: actionRef.current[name]?.ref },
-											};
-										}}
-										inputRef={(instance: HTMLInputElement) => {
-											actionRef.current = {
-												...actionRef.current,
-												[name]: { ref: instance, action: actionRef.current[name]?.action },
-											};
-
-											return ref;
-										}}
+										inputRef={ref}
 										name={name}
 										checked={value}
 										onChange={callAll(onChangeI, onChangeRef.current)}
