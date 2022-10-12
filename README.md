@@ -271,10 +271,10 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 const Component = () => {
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<HookDatePicker {...registerState('trialEndsAt')}/>
-			</form>
-		</LocalizationProvider>
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<HookDatePicker {...registerState('trialEndsAt')}/>
+		</form>
+	</LocalizationProvider>
     )
 }
 ```
