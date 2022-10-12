@@ -267,6 +267,7 @@ yarn add date-fns
 
 ```tsx
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { HookDatePicker } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
     return (
