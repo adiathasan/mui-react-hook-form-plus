@@ -7,7 +7,7 @@ import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { HookCheckBox } from '@components/HookCheckBox';
 import { jsonStringify } from '@utils/misc';
 
-const stories = storiesOf('HookCheckBox', module);
+const stories = storiesOf('HookCheckBox ✔', module);
 
 stories.add('@HookCheckBox', () => {
 	// import { Button, Grid } from '@mui/material';

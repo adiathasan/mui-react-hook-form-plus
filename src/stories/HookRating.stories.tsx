@@ -6,7 +6,7 @@ import { HookRating } from '@components/HookRating';
 import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { jsonStringify } from '@utils/misc';
 
-const stories = storiesOf('HookRating', module);
+const stories = storiesOf('HookRating 🌟', module);
 
 stories.add('@HookRating', () => {
 	// import { Button, Grid } from '@mui/material';

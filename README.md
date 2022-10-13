@@ -298,7 +298,21 @@ Check out [Inputs Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/
 3.  `<HookDesktopDatePicker />`
 4.  `<HookMobileDatePicker />`
 
-Check out [DatePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/datepicker--hookdatepicker)
+Check out [DatePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/datepicker-📅--hookdatepicker)
+> ### DateTimePicker
+1.  `<HookDateTimePicker />`
+2.  `<HookStaticDateTimePicker />`
+3.  `<HookDesktopDateTimePicker />`
+4.  `<HookMobileDateTimePicker />`
+
+Check out [DateTimePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/datetimepicker--hookdatetimepicker)
+> ### TimePicker
+1.  `<HookTimePicker />`
+2.  `<HookStaticTimePicker />`
+3.  `<HookDesktopTimePicker />`
+4.  `<HookMobileTimePicker />`
+
+Check out [TimePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/timepicker-🕗--hooktimepicker)
 
 
 ### Form Hooks

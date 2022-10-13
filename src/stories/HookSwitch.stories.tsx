@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { HookSwitch } from '@components/HookSwitch';
 import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 
-const stories = storiesOf('HookSwitch', module);
+const stories = storiesOf('HookSwitch ❕', module);
 
 stories.add('@HookSwitch', () => {
 	// import {  Grid } from '@mui/material';

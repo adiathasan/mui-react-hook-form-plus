@@ -6,19 +6,19 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { jsonStringify } from '@utils/misc';
-import { HookDatePicker } from '@components/HookDatePicker';
-import { HookStaticDatePicker } from '@components/HookStaticDatePicker';
-import { HookDesktopDatePicker } from '@components/HookDesktopDatePicker';
-import { HookMobileDatePicker } from '@components/HookMobileDatePicker';
+import { HookTimePicker } from '@components/HookTimePicker';
+import { HookStaticTimePicker } from '@components/HookStaticTimePicker';
+import { HookDesktopTimePicker } from '@components/HookDesktopTimePicker';
+import { HookMobileTimePicker } from '@components/HookMobileTimePicker';
 
-const stories = storiesOf('DatePicker 📅', module);
+const stories = storiesOf('TimePicker 🕗', module);
 
-stories.add('HookDatePicker', () => {
+stories.add('HookTimePicker', () => {
 	// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 	// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 	// import { Button } from '@mui/material';
 
-	// import { HookDatePicker, useHookForm } from 'mui-react-hook-form-plus ';
+	// import { HookTimePicker, useHookForm } from 'mui-react-hook-form-plus ';
 
 	const defaultValues = {
 		trialEndsAt: null as Date | null,
@@ -35,14 +35,14 @@ stories.add('HookDatePicker', () => {
 	return (
 		<LocalizationProvider dateAdapter={AdapterDateFns}>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h2>This is a `DatePicker` hooked up with `react-hook-form`</h2>
-				<h3>Learn how we use `datePickerProps` 🐭</h3>
-				<HookDatePicker
+				<h2>This is a `TimePicker` hooked up with `react-hook-form`</h2>
+				<h3>Learn how we use `TimePickerProps` 🐭</h3>
+				<HookTimePicker
 					{...registerState('trialEndsAt')}
 					rules={{
 						required: true,
 					}}
-					datePickerProps={{
+					timePickerProps={{
 						label: 'Basic',
 					}}
 				/>
@@ -55,15 +55,15 @@ stories.add('HookDatePicker', () => {
 	);
 });
 
-stories.add('HookStaticDatePicker', () => {
+stories.add('HookStaticTimePicker', () => {
 	// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 	// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 	// import { Button } from '@mui/material';
 
-	// import { HookStaticDatePicker, useHookForm } from 'mui-react-hook-form-plus ';
+	// import { HookStaticTimePicker, useHookForm } from 'mui-react-hook-form-plus ';
 
 	const defaultValues = {
-		trialEndsAt: null as Date | null,
+		trialEndsAt: new Date(),
 	};
 
 	const { registerState, handleSubmit } = useHookForm({
@@ -77,18 +77,21 @@ stories.add('HookStaticDatePicker', () => {
 	return (
 		<LocalizationProvider dateAdapter={AdapterDateFns}>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h2>This is a `StaticDatePicker` hooked up with `react-hook-form`</h2>
-				<h3>Learn how we use `staticDatePickerProps` 🐭</h3>
-				<HookStaticDatePicker
-					{...registerState('trialEndsAt')}
-					rules={{
-						required: true,
-					}}
-					staticDatePickerProps={{
-						displayStaticWrapperAs: 'desktop',
-						openTo: 'year',
-					}}
-				/>
+				<h2>This is a `StaticTimePicker` hooked up with `react-hook-form`</h2>
+				<h3>Learn how we use `staticTimePickerProps` 🐭</h3>
+				<div style={{ position: 'relative', margin: '0 auto', maxWidth: 800 }}>
+					<HookStaticTimePicker
+						{...registerState('trialEndsAt')}
+						rules={{
+							required: true,
+						}}
+						staticTimePickerProps={{
+							orientation: 'landscape',
+							openTo: 'minutes',
+							ampm: true,
+						}}
+					/>
+				</div>
 				<br />
 				<Button sx={{ marginTop: 2 }} type='submit' variant='contained'>
 					Submit
@@ -98,12 +101,12 @@ stories.add('HookStaticDatePicker', () => {
 	);
 });
 
-stories.add('HookDesktopDatePicker', () => {
+stories.add('HookDesktopTimePicker', () => {
 	// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 	// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 	// import { Button } from '@mui/material';
 
-	// import { HookDesktopDatePicker, useHookForm } from 'mui-react-hook-form-plus ';
+	// import { HookDesktopTimePicker, useHookForm } from 'mui-react-hook-form-plus ';
 
 	const defaultValues = {
 		trialEndsAt: null as Date | null,
@@ -120,14 +123,14 @@ stories.add('HookDesktopDatePicker', () => {
 	return (
 		<LocalizationProvider dateAdapter={AdapterDateFns}>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h2>This is a `DesktopDatePicker` hooked up with `react-hook-form`</h2>
-				<h3>Learn how we use `desktopDatePickerProps` 🐭</h3>
-				<HookDesktopDatePicker
+				<h2>This is a `DesktopTimePicker` hooked up with `react-hook-form`</h2>
+				<h3>Learn how we use `desktopTimePickerProps` 🐭</h3>
+				<HookDesktopTimePicker
 					{...registerState('trialEndsAt')}
 					rules={{
 						required: true,
 					}}
-					desktopDatePickerProps={{
+					desktopTimePickerProps={{
 						label: 'Desktop',
 					}}
 				/>
@@ -140,12 +143,12 @@ stories.add('HookDesktopDatePicker', () => {
 	);
 });
 
-stories.add('HookMobileDatePicker', () => {
+stories.add('HookMobileTimePicker', () => {
 	// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 	// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 	// import { Button } from '@mui/material';
 
-	// import { HookMobileDatePicker, useHookForm } from 'mui-react-hook-form-plus ';
+	// import { HookMobileTimePicker, useHookForm } from 'mui-react-hook-form-plus ';
 
 	const defaultValues = {
 		trialEndsAt: new Date() as Date,
@@ -162,14 +165,14 @@ stories.add('HookMobileDatePicker', () => {
 	return (
 		<LocalizationProvider dateAdapter={AdapterDateFns}>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h2>This is a `MobileDatePicker` hooked up with `react-hook-form`</h2>
-				<h3>Learn how we use `mobileDatePickerProps` 🐭</h3>
-				<HookMobileDatePicker
+				<h2>This is a `MobileTimePicker` hooked up with `react-hook-form`</h2>
+				<h3>Learn how we use `mobileTimePickerProps` 🐭</h3>
+				<HookMobileTimePicker
 					{...registerState('trialEndsAt')}
 					rules={{
 						required: true,
 					}}
-					mobileDatePickerProps={{
+					mobileTimePickerProps={{
 						label: 'Mobile',
 					}}
 				/>

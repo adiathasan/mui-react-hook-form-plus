@@ -6,7 +6,7 @@ import { HookSlider } from '@components/HookSlider';
 import { useHookForm } from '@lib/react-hook-form/hooks/useHookForm';
 import { jsonStringify } from '@utils/misc';
 
-const stories = storiesOf('HookSlider', module);
+const stories = storiesOf('HookSlider 🎢', module);
 
 stories.add('@HookSlider', () => {
 	// import { Button, Grid } from '@mui/material';
