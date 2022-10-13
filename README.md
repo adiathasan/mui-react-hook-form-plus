@@ -1,4 +1,4 @@
-### The perfect recipe with `material-ui`💙`TS`💙`react-hook-form` & more... 
+### The perfect recipe with `material-ui`💙`TS`💙`react-hook-form` & more...
 
 The complete `type-safe` `material-ui` and `react-hook-form` combo and beyond with simple api.
 
@@ -21,8 +21,8 @@ npm install @mui/x-date-pickers
 ---- or ----
 yarn add @mui/x-date-pickers
 ```
-#### Then [Install](https://www.npmjs.com/package/mui-react-hook-form-plus#install)
 
+#### Then [Install](https://www.npmjs.com/package/mui-react-hook-form-plus#install)
 
 ```source-shell
 npm install mui-react-hook-form-plus
@@ -34,7 +34,7 @@ If you are familiar with `react-hook-form` you will love it! Otherwise, you will
 
 We use `propGetter` pattern just like `react-hook-form` is doing by `registering` the `state` of each field.
 
-### How to use it
+## How to use it
 
 1. Import `Components` and `Hooks` form `mui-react-hook-form-plus`.
 2. From `useHookForm` get the `registerState` method.
@@ -46,72 +46,74 @@ For more clear-cut answer `follow` the example below:
 import { HookTextField, HookRating, useHookForm } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
-    const defaultValues = { name: 'Adiat Hasan', rating: 4 };
+	const defaultValues = { name: 'Adiat Hasan', rating: 4 };
 
-    const {registerState, handleSubmit} = useHookForm({
-        defaultValues,
-    });
-    
-    const onSubmit = (data: typeof defaultValues) => {
-        // will run if it is valid
-    }
-    
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <HookTextField {...registerState('name')} />
-            <HookRating {...registerState('rating')} />
-            <button type='submit'>Submit</button>
-        </form>
-    )
-}
+	const { registerState, handleSubmit } = useHookForm({
+		defaultValues,
+	});
+
+	const onSubmit = (data: typeof defaultValues) => {
+		// will run if it is valid
+	};
+
+	return (
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<HookTextField {...registerState('name')} />
+			<HookRating {...registerState('rating')} />
+			<button type='submit'>Submit</button>
+		</form>
+	);
+};
 ```
 
-We have awesome `typescript` support so that you can take the most of it. Also, `validation` is a piece of 🧁(cake)  
+We have awesome `typescript` support so that you can take the most of it. Also, `validation` is a piece of 🧁(cake)
 
 [![What You Can Build](https://raw.githubusercontent.com/adiathasan/mui-react-hook-form-plus/master/mui-react-hook-form-plus.webp)](https://raw.githubusercontent.com/adiathasan/mui-react-hook-form-plus/master/mui-react-hook-form-plus.webp)
 
-### Validation
+> ## Validation
 
 Add `rules` prop to your `[InputComponents]`
+
 ```tsx
 import { HookTextField, useHookForm } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
-    const defaultValues = { name: '', isAdmin: true };
+	const defaultValues = { name: '', isAdmin: true };
 
-    const {registerState, handleSubmit} = useHookForm({
-        defaultValues,
-    });
-    
-    const onSubmit = (data: typeof defaultValues) => {
-        // will run if it is validated | if !valid will thrown error in the UI
-    }
-    
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <HookTextField 
-                {...registerState('name')}
-                rules={{
-                    required: {
-                        value: true,
-                        message: 'A required field'
-                    }
-                    // maxLength
-                    // minLength
-                    // pattern
-                    // validate -> Fn -> reutrn -> srting | undefined
-                }}
-            />
-            <button type='submit'>Submit</button>
-        </form>
-    )
-}
+	const { registerState, handleSubmit } = useHookForm({
+		defaultValues,
+	});
+
+	const onSubmit = (data: typeof defaultValues) => {
+		// will run if it is validated | if !valid will thrown error in the UI
+	};
+
+	return (
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<HookTextField
+				{...registerState('name')}
+				rules={{
+					required: {
+						value: true,
+						message: 'A required field',
+					},
+					// maxLength
+					// minLength
+					// pattern
+					// validate -> Fn -> reutrn -> srting | undefined
+				}}
+			/>
+			<button type='submit'>Submit</button>
+		</form>
+	);
+};
 ```
+
 It will `validate` based on validation `rules` we specify.
 
 The `onSubmit` `Fn` will be triggered if all `input === valid`
 
-For more options for rules look into [this](https://react-hook-form.com/api/useform/register#rules) 
+For more options for rules look into [this](https://react-hook-form.com/api/useform/register#rules)
 
 Now what if we want our `vanilla` `<input />`?
 
@@ -121,82 +123,82 @@ Just use the `register` method not the `registerState`
 import { HookTextField, useHookForm } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
-    const defaultValues = { name: 'Adiat Hasan', rating: 4 };
+	const defaultValues = { name: 'Adiat Hasan', rating: 4 };
 
-    const {registerState, handleSubmit, register} = useHookForm({
-        defaultValues,
-    });
-    
-    const onSubmit = (data: typeof defaultValues) => {
-        // -> do something with the data
-    }
-    
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register('rating')} />
-            <HookTextField {...registerState('name')} />
-            <button type='submit'>Submit</button>
-        </form>
-    )
-}
+	const { registerState, handleSubmit, register } = useHookForm({
+		defaultValues,
+	});
+
+	const onSubmit = (data: typeof defaultValues) => {
+		// -> do something with the data
+	};
+
+	return (
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<input {...register('rating')} />
+			<HookTextField {...registerState('name')} />
+			<button type='submit'>Submit</button>
+		</form>
+	);
+};
 ```
+
 You might be wondering what about `deep nested` complex `Component`?
 
 Use the `FormContext` to make it simple.
+
 1. Wrap your form with `HookFormProvider`
 2. Pass the methods returned from `useHookForm` to `HookFormProvider`
-3. Get the `registerState` method anywhere in the `tree` from `useHookFormContext` 
+3. Get the `registerState` method anywhere in the `tree` from `useHookFormContext`
 
-Example for [Nested Component](https://mui-react-hook-form-plus.vercel.app/?path=/docs/form-context--hookformprovider)
+### Example for [Nested Component](https://mui-react-hook-form-plus.vercel.app/?path=/docs/form-context--hookformprovider)
 
 ```tsx
 import { HookTextField, useHookForm, HookFormProvider } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
-    const defaultValues = { firstName: '', lastName: '', sex: '', rating: 3.5 };
+	const defaultValues = { firstName: '', lastName: '', sex: '', rating: 3.5 };
 
-    const methods = useHookForm<Person>({
-        defaultValues,
-    });
+	const methods = useHookForm<Person>({
+		defaultValues,
+	});
 
-    const { registerState, handleSubmit } = methods;
+	const { registerState, handleSubmit } = methods;
 
-    const onSubmit = (data: Person) => {
-        // do something
-    };
-    
-    return (
-        <HookFormProvider {...methods}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <HookTextField {...registerState('firstName')} textFieldProps={{ label: 'First Name' }} />
-                <HookTextField {...registerState('lastName')} textFieldProps={{ label: 'Last Name' }} />
-                <NestedComponent />
-                <button type='submit'>Submit</button>
-            </form>
-        </HookFormProvider>
-    )
-}
+	const onSubmit = (data: Person) => {
+		// do something
+	};
+
+	return (
+		<HookFormProvider {...methods}>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<HookTextField {...registerState('firstName')} textFieldProps={{ label: 'First Name' }} />
+				<HookTextField {...registerState('lastName')} textFieldProps={{ label: 'Last Name' }} />
+				<NestedComponent />
+				<button type='submit'>Submit</button>
+			</form>
+		</HookFormProvider>
+	);
+};
 ```
-Now we can get the `registerState` without prop drilling
 
+Now we can get the `registerState` without prop drilling
 
 ```tsx
 import { HookRating, useHookForm } from 'mui-react-hook-form-plus ';
 
 const NestedComponent = () => {
-    const {registerState} = useHookFormContext<Person>();
-    
-    return (
-        <HookRating {...registerState('rating')} ratingProps={{ precision: 0.5 }} />
-    )
-}
+	const { registerState } = useHookFormContext<Person>();
+
+	return <HookRating {...registerState('rating')} ratingProps={{ precision: 0.5 }} />;
+};
 ```
 
-**Note** that using `FormContext` can lack in performance as it is built on top of `React.Context`. 
+**Note** that using `FormContext` can lack in performance as it is built on top of `React.Context`.
 
-To optimize it further and for learning more check out [this](https://react-hook-form.com/advanced-usage#FormProviderPerformance) 
+To optimize it further and for learning more check out [this](https://react-hook-form.com/advanced-usage#FormProviderPerformance)
 
-### Layouts [ Form + Grid ] 
+> ## Layouts [ Form + Grid ]
 
 We baked in `<Grid/>` directly into the `[InputComponents]` so that it enhances the `DX`.
 
@@ -209,53 +211,54 @@ import { Button, Grid } from '@mui/material';
 import { HookTextField, HookRating, useHookForm } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
-    const defaultValues = { name: '', rating: 4 };
+	const defaultValues = { name: '', rating: 4 };
 
-    const {registerState, handleSubmit} = useHookForm({
-        defaultValues,
-    });
-    
-    const onSubmit = (data: typeof defaultValues) => {
-        // will run if it is valid
-    }
-    
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid container spacing={3}>
-                <HookTextField
-                    {...registerState('name')} 
-                    gridProps={{
-                       xs: 12,
-                        md: 5,
-                    }}
-                />
-                <HookRating
-                    {...registerState('rating')}
-                    gridProps={{
-                        xs: 12,
-                        md: 5,
-                    }}
-                />
-                <Grid>
-                    <Button type='submit' variant='contained'>
-                        Submit
-                    </Button>
-                </Grid>
-            </Grid>
-        </form>
-    )
-}
+	const { registerState, handleSubmit } = useHookForm({
+		defaultValues,
+	});
+
+	const onSubmit = (data: typeof defaultValues) => {
+		// will run if it is valid
+	};
+
+	return (
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<Grid container spacing={3}>
+				<HookTextField
+					{...registerState('name')}
+					gridProps={{
+						xs: 12,
+						md: 5,
+					}}
+				/>
+				<HookRating
+					{...registerState('rating')}
+					gridProps={{
+						xs: 12,
+						md: 5,
+					}}
+				/>
+				<Grid>
+					<Button type='submit' variant='contained'>
+						Submit
+					</Button>
+				</Grid>
+			</Grid>
+		</form>
+	);
+};
 ```
 
-> ### DatePicker
+> ## DatePicker
 
 ### Package installation:
+
 You need to install 3 different types of package to make the pickers work:
 
 1. The component (@mui/x-date-pickers) manages the rendering.
 2. The date-library (moment, dayjs, ...) manages the date manipulation.
 3. The adapter (@date-io) exposes your favorite date-library under a unified api used by component.
-First you have to install the date-library you want to use to manage dates, and the component package:
+   First you have to install the date-library you want to use to manage dates, and the component package:
 
 ```bash
 // Install component (community version)
@@ -270,17 +273,18 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { HookDatePicker } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
-    return (
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<HookDatePicker {...registerState('trialEndsAt')}/>
-		</form>
-	</LocalizationProvider>
-    )
-}
+	return (
+		<LocalizationProvider dateAdapter={AdapterDateFns}>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<HookDatePicker {...registerState('trialEndsAt')} />
+			</form>
+		</LocalizationProvider>
+	);
+};
 ```
 
 > ## Available Input Components
+
 1. `<HookToggleButtonGroup />`
 2. `<HookAutoComplete />`
 3. `<HookRadioButton />`
@@ -293,21 +297,26 @@ const Component = () => {
 
 Check out [Inputs Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/hooktextfield--hooktextfield)
 
-> ### DatePicker
+> ## DatePicker
+
 1.  `<HookDatePicker />`
 2.  `<HookStaticDatePicker />`
 3.  `<HookDesktopDatePicker />`
 4.  `<HookMobileDatePicker />`
 
 Check out [DatePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/datepicker-📅--hookdatepicker)
-> ### DateTimePicker
+
+> ## DateTimePicker
+
 1.  `<HookDateTimePicker />`
 2.  `<HookStaticDateTimePicker />`
 3.  `<HookDesktopDateTimePicker />`
 4.  `<HookMobileDateTimePicker />`
 
 Check out [DateTimePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/datetimepicker--hookdatetimepicker)
-> ### TimePicker
+
+> ## TimePicker
+
 1.  `<HookTimePicker />`
 2.  `<HookStaticTimePicker />`
 3.  `<HookDesktopTimePicker />`
@@ -315,22 +324,25 @@ Check out [DateTimePicker Demo](https://mui-react-hook-form-plus.vercel.app/?pat
 
 Check out [TimePicker Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/timepicker-🕗--hooktimepicker)
 
+> ## Form Hooks
 
-### Form Hooks
 1. `useHookForm`
 2. `useHookFormContext`
 
-### Context Providers
+> ## Context Providers
+
 1. `HookFormProvider`
 
-### Effortless Hooks
+> ## Effortless Hooks
+
 As we have `promised` with the `project name` with adding a `-plus` to `mui-react-hook-form-plus`.
 
 We delivered it. A few effortless hooks to make your `mui` journey `special`.
 
-We provided the same `pattern` as `register` and `propGetters` as the `form` `components`  
+We provided the same `pattern` as `register` and `propGetters` as the `form` `components`
 
 Those Hooks are:
+
 1. `useMenu`
 2. `usePagination`
 3. `useAccordion`
@@ -346,5 +358,5 @@ Check out [Hooks Demo](https://mui-react-hook-form-plus.vercel.app/?path=/docs/m
 ### MORE IS COMING...
 
 ### Open for contributions
-Just follow the `CONTRIBUTING.md` & you are good to go.
 
+Just follow the `CONTRIBUTING.md` & you are good to go.

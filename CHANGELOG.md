@@ -1,11 +1,31 @@
 # Changelog
+
+# [1.2.0] - 10-13-2022
+
+Added `DateTimePicker` & `TimePicker`
+
+> ### DateTimePicker
+
+1.  `<HookDateTimePicker />`
+2.  `<HookStaticDateTimePicker />`
+3.  `<HookDesktopDateTimePicker />`
+4.  `<HookMobileDateTimePicker />`
+
+> ### TimePicker
+
+1.  `<HookTimePicker />`
+2.  `<HookStaticTimePicker />`
+3.  `<HookDesktopTimePicker />`
+4.  `<HookMobileTimePicker />`
+
 # [1.1.6] - 10-11-2022
 
-Warning removed form `HookCheckBox` 
+Warning removed form `HookCheckBox`
 
 ```diff
 - Warning: Unexpected return value from a callback ref in input. A callback ref should not return a function.
 ```
+
 # [1.1.5] - 10-11-2022
 
 Rollup build fix
@@ -13,6 +33,7 @@ Rollup build fix
 # [1.1.2] - 10-10-2022
 
 Build changed form `rollup` -> `tsup`
+
 # [1.1.1] - 10-10-2022
 
 Modified package.json for @mui/x-date-pickers optional
@@ -28,17 +49,18 @@ Modified package.json for @mui/x-date-pickers optional
 +      "optional": true
 +    }
 +  }
-``` 
+```
+
 # [1.1.0] - 10-9-2022
 
-Added DatePicker | [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/4) - "Support for DesktopDatePicker"
+Added `DatePicker` | [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/4) - "Support for DesktopDatePicker"
+
 > ### DatePicker
+
 1.  `<HookDatePicker />`
 2.  `<HookStaticDatePicker />`
 3.  `<HookDesktopDatePicker />`
 4.  `<HookMobileDatePicker />`
-
-
 
 # [1.0.3] - 10-2-2022
 
@@ -97,4 +119,3 @@ Fix for [issue](https://github.com/adiathasan/mui-react-hook-form-plus/issues/1)
     onChange={callAll((e: SelectChangeEvent) => {
         if (multiple) {
 ```
-
