@@ -267,14 +267,15 @@ yarn add date-fns
 
 ```tsx
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { HookDatePicker } from 'mui-react-hook-form-plus ';
 
 const Component = () => {
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<HookDatePicker {...registerState('trialEndsAt')}/>
-			</form>
-		</LocalizationProvider>
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<HookDatePicker {...registerState('trialEndsAt')}/>
+		</form>
+	</LocalizationProvider>
     )
 }
 ```
