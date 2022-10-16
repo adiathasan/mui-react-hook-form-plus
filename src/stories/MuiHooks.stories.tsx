@@ -131,7 +131,7 @@ stories.add('useTabs', () => {
 
 	return (
 		<Stack spacing={2}>
-			<h2>MUI - Pagination with `useTabs` hook from `mui-react-hook-form-plus`</h2>
+			<h2>MUI - Tabs with `useTabs` hook from `mui-react-hook-form-plus`</h2>
 			<Box sx={{ width: '100%' }}>
 				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 					<Tabs {...register()} aria-label='basic tabs example'>
@@ -232,7 +232,7 @@ stories.add('useDialog', () => {
 
 	return (
 		<Stack spacing={2}>
-			<h2>MUI - Backdrop with `useDialog` hook from `mui-react-hook-form-plus`</h2>
+			<h2>MUI - Dialog with `useDialog` hook from `mui-react-hook-form-plus`</h2>
 			<Button variant='outlined' onClick={open}>
 				Open simple dialog
 			</Button>
