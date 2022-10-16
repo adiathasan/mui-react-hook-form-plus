@@ -13,7 +13,14 @@ export function createRollupConfig(options, callback) {
 
 	const config = {
 		input: options.input,
-		external: ['react', 'react-hook-form', '@mui/material', '@mui/x-date-pickers'],
+		external: [
+			'react',
+			'react-hook-form',
+			'@mui/material',
+			'@mui/x-date-pickers',
+			'@mui/icons-material',
+			'@mui/material/colors',
+		],
 		output: {
 			file: outputName,
 			format: options.format,

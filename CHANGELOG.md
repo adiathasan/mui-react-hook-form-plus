@@ -1,5 +1,14 @@
 # Changelog
 
+# [1.3.0] - 10-16-2022
+
+### Added MUI hooks
+
+1. `useTabs`
+2. `useDialog`
+3. `useBackdrop`
+4. `useBottomNavigation`
+
 # [1.2.0] - 10-13-2022
 
 Added `DateTimePicker` & `TimePicker`

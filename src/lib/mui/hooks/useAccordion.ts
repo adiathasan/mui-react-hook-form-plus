@@ -1,5 +1,6 @@
-import { callAll } from '@utils/misc';
 import * as React from 'react';
+
+import { callAll } from '@utils/misc';
 
 export interface UseAccordionProps {
 	defaultValue?: boolean;

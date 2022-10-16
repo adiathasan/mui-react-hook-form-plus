@@ -6,8 +6,12 @@ export * from './lib/react-hook-form/hooks/useHookForm';
 
 // MUI hooks
 export * from './lib/mui/hooks/useMenu';
+export * from './lib/mui/hooks/useTabs';
+export * from './lib/mui/hooks/useDialog';
+export * from './lib/mui/hooks/useBackdrop';
 export * from './lib/mui/hooks/useAccordion';
 export * from './lib/mui/hooks/usePagination';
+export * from './lib/mui/hooks/useBottomNavigation';
 
 // Inputs
 export * from './components/HookRating';

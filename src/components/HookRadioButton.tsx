@@ -27,8 +27,8 @@ export interface HookRadioButtonProps<T extends FieldValues = FieldValues> exten
 	gridProps?: GridProps;
 	formHelperText?: string;
 	formState: FormState<T>;
-	label?: string;
-	fields: { label: string; value: string }[];
+	label?: React.ReactNode;
+	fields: { label: React.ReactNode; value: string }[];
 	defaultValue?: UnpackNestedValue<PathValue<T, Path<T>>>;
 	disabled?: any;
 }

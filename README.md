@@ -346,6 +346,10 @@ Those Hooks are:
 1. `useMenu`
 2. `usePagination`
 3. `useAccordion`
+4. `useTabs`
+5. `useDialog`
+6. `useBackdrop`
+7. `useBottomNavigation`
 
 And more `hooks` are in lab 🧪 preparing to be released. So, stay tuned.
 
