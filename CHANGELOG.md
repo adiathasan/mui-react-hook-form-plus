@@ -1,6 +1,6 @@
 # Changelog
 
-# [1.3.1] - 5-11-2022
+# [1.3.2] - 5-11-2022
 
 ### `HookAutoComplete` component types fix
 
