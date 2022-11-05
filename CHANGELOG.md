@@ -1,5 +1,15 @@
 # Changelog
 
+# [1.3.1] - 5-11-2022
+
+### `HookAutoComplete` component types fix
+
+```diff
+- import { Optional } from '@utils/types';
+
++ import { Optional } from '../utils/types';
+```
+
 # [1.3.0] - 10-16-2022
 
 ### Added MUI hooks

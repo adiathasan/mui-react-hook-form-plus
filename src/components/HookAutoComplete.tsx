@@ -19,7 +19,7 @@ import {
 	UseFormTrigger,
 } from 'react-hook-form';
 
-import { Optional } from '@utils/types';
+import { Optional } from '../utils/types';
 import { callAll } from '../utils/misc';
 
 export interface HookAutoCompleteProps<
