@@ -157,6 +157,9 @@ stories.add('Asynchronous 🏃', () => {
 						InputProps: {
 							endAdornment: <>{loading ? <CircularProgress color='inherit' size={20} /> : null}</>,
 						},
+						onChange: (event) => {
+							console.log('event', event.target.value);
+						},
 					}}
 					gridProps={{
 						xs: 12,

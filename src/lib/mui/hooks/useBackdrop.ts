@@ -7,7 +7,7 @@ export interface UseBackdropProps {
 }
 
 export type UseBackDropRegisterFn = (props?: { onClick?: (event: React.MouseEvent) => void }) => {
-	onClick: (event: React.MouseEvent) => void;
+	onClick: (event?: React.MouseEvent) => void;
 	open: boolean;
 };
 

@@ -7,14 +7,14 @@ export interface UseDialogProps {
 }
 
 export type UseDialogRegisterFn = (props?: { onClose?: (event: React.SyntheticEvent) => void }) => {
-	onClose: (event: React.SyntheticEvent) => void;
+	onClose: (event?: React.SyntheticEvent) => void;
 	open: boolean;
 };
 
 export function useDialog({ defaultValue = false }: UseDialogProps = {}) {
 	const [isOpen, setIsOpen] = React.useState(defaultValue);
 
-	const onClose = (_event: React.SyntheticEvent) => {
+	const onClose = (_event?: React.SyntheticEvent) => {
 		setIsOpen(false);
 	};
 
