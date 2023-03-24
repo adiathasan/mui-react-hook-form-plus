@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.3.4] - 24-03-2023
+
+Dist folder added
+
+Forgot to add dist folder in previous release [1.3.3] as I switched my laptop and forgot to add it in the new one.
+
 # [1.3.2] - 5-11-2022
 
 ### `HookAutoComplete` component types fix
