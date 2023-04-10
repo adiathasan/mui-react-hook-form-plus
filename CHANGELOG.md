@@ -1,5 +1,21 @@
 # Changelog
 
+# [1.3.5] - 11-04-2023
+
+Inside `onChange` Stale value issue fixed
+
+Forgot [`onChangeRef`] to re-assign like - `onChangeRef.current = onChange` on every render.
+
+```diff
+
++ const onChangeRef = React.useRef(onChange);
++ /**
++  * we update the ref on every render
++  */
++ onChangeRef.current = onChange;
+
+```
+
 # [1.3.4] - 24-03-2023
 
 Dist folder added
