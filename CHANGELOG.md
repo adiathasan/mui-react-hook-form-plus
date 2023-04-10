@@ -1,5 +1,9 @@
 # Changelog
 
+# [1.3.6] - 11-04-2023
+
+Bumped `react-hook-form` version to `7.43.9`
+
 # [1.3.5] - 11-04-2023
 
 Inside `onChange` Stale value issue fixed
