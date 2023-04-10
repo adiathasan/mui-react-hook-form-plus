@@ -61,7 +61,7 @@
     "date-fns": "^2.29.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-hook-form": "^7.35.0",
+    "react-hook-form": "^7.43.9",
     "rollup": "^2.79.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
