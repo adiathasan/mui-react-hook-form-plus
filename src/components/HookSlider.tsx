@@ -75,6 +75,10 @@ const Component = <T extends FieldValues>({
 	 * So we use callAll to merge the two
 	 */
 	const onChangeRef = React.useRef(onChange);
+	/**
+	 * we update the ref on every render
+	 */
+	onChangeRef.current = onChange;
 
 	return (
 		<Controller

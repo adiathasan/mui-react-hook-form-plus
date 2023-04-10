@@ -33,7 +33,7 @@ stories.add('@HookAutoComplete 🛫', () => {
 		movie: null,
 	};
 
-	const { registerState, handleSubmit } = useHookForm<DefaultValues>({
+	const { registerState, handleSubmit, formState } = useHookForm<DefaultValues>({
 		defaultValues,
 	});
 
