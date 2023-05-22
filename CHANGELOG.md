@@ -1,5 +1,15 @@
 # Changelog
 
+# [1.4.0] - 22-05-2023
+
+Bumped `react` version to `18.2.0`
+
+Bumped `react-dom` version to `18.2.0`
+
+Bumped `@mui/material` version to `5.13.1`
+
+Bumped `@mui/x-date-pickers` version to `6.5.0`
+
 # [1.3.6] - 11-04-2023
 
 Bumped `react-hook-form` version to `7.43.9`
