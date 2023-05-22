@@ -88,7 +88,6 @@ stories.add('HookStaticDateTimePicker', () => {
 						staticDateTimePickerProps={{
 							displayStaticWrapperAs: 'desktop',
 							openTo: 'year',
-							closeOnSelect: true,
 						}}
 					/>
 				</div>

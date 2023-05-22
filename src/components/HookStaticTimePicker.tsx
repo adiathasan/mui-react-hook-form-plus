@@ -15,7 +15,7 @@ import { callAll } from '../utils/misc';
 export interface HookStaticTimePickerProps<TInputDate, TDate, T extends FieldValues = FieldValues>
 	extends UseControllerProps<T> {
 	textFieldProps?: TextFieldProps;
-	staticTimePickerProps?: Partial<StaticTimePickerProps<TInputDate, TDate>>;
+	staticTimePickerProps?: Partial<StaticTimePickerProps<TInputDate>>;
 	formState: FormState<T>;
 	gridProps?: GridProps;
 	setValue?: UseFormSetValue<T>;
@@ -81,7 +81,7 @@ const Component = <TInputDate, TDate, T extends FieldValues = FieldValues>({
 }: HookStaticTimePickerPropType<TInputDate, TDate, T>) => {
 	const { error } = restC?.control?.getFieldState(restC.name) ?? {};
 
-	const { onChange, renderInput, ...restDate } = staticTimePickerProps ?? {};
+	const { onChange, ...restDate } = staticTimePickerProps ?? {};
 
 	/**
 	 * we don't want to pass onChange to the StaticTimePicker
@@ -105,23 +105,6 @@ const Component = <TInputDate, TDate, T extends FieldValues = FieldValues>({
 					onChange={callAll((newValue: Date) => {
 						onChangeI(newValue);
 					}, onChangeRef.current)}
-					renderInput={
-						!!renderInput
-							? renderInput
-							: (params) => {
-									return (
-										<TextField
-											{...params}
-											{...textFieldProps}
-											ref={params.inputRef}
-											inputRef={ref}
-											name={name}
-											error={!!error}
-											helperText={error?.message}
-										/>
-									);
-							  }
-					}
 				/>
 			)}
 		/>

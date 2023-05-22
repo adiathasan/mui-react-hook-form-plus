@@ -15,7 +15,7 @@ import { callAll } from '../utils/misc';
 export interface HookMobileDatePickerProps<TInputDate, TDate, T extends FieldValues = FieldValues>
 	extends UseControllerProps<T> {
 	textFieldProps?: TextFieldProps;
-	mobileDatePickerProps?: Partial<MobileDatePickerProps<TInputDate, TDate>>;
+	mobileDatePickerProps?: Partial<MobileDatePickerProps<TInputDate>>;
 	formState: FormState<T>;
 	gridProps?: GridProps;
 	setValue?: UseFormSetValue<T>;
@@ -81,7 +81,7 @@ const Component = <TInputDate, TDate, T extends FieldValues = FieldValues>({
 }: HookMobileDatePickerPropType<TInputDate, TDate, T>) => {
 	const { error } = restC?.control?.getFieldState(restC.name) ?? {};
 
-	const { onChange, renderInput, ...restDate } = mobileDatePickerProps ?? {};
+	const { onChange, ...restDate } = mobileDatePickerProps ?? {};
 
 	/**
 	 * we don't want to pass onChange to the MobileDatePicker
@@ -105,23 +105,6 @@ const Component = <TInputDate, TDate, T extends FieldValues = FieldValues>({
 					onChange={callAll((newValue: Date) => {
 						onChangeI(newValue);
 					}, onChangeRef.current)}
-					renderInput={
-						!!renderInput
-							? renderInput
-							: (params) => {
-									return (
-										<TextField
-											{...params}
-											{...textFieldProps}
-											ref={params.inputRef}
-											inputRef={ref}
-											name={name}
-											error={!!error}
-											helperText={error?.message}
-										/>
-									);
-							  }
-					}
 				/>
 			)}
 		/>
