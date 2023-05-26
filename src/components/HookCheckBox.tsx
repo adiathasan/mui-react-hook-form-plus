@@ -1,7 +1,8 @@
+'use client';
+
 import * as React from 'react';
 import { Controller, FieldPath, FieldValues, FormState, UseControllerProps } from 'react-hook-form';
 import {
-	ButtonBaseActions,
 	Checkbox,
 	CheckboxProps,
 	FormControl,

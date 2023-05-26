@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { Controller, FieldValues, FormState, UseControllerProps } from 'react-hook-form';
 import { Grid, GridProps, ToggleButtonGroup, ToggleButtonGroupProps } from '@mui/material';

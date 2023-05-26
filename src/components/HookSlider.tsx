@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { GridProps, Grid, Slider, SliderProps } from '@mui/material';
 

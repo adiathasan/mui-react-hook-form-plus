@@ -1,3 +1,5 @@
+'use client';
+
 export const removeEmptyValuesFromInputs = <D = object>(data: D, options = { enableValueTypes: [] as string[] }) => {
 	const keys = Object.keys(data as any) as (keyof D)[];
 

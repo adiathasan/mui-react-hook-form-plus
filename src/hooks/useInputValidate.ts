@@ -1,3 +1,5 @@
+'use client';
+
 type Required = { message: string; value?: boolean } | boolean;
 type RegexInternal = { value: RegExp; message: string };
 type MaxLength = { value: number; message: string };

@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { Grid, GridProps, TextField, TextFieldProps } from '@mui/material';
 import { StaticTimePicker, StaticTimePickerProps } from '@mui/x-date-pickers';

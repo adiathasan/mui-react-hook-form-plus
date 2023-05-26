@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { SwitchProps, FormControlLabelProps, GridProps, Grid, FormControlLabel, Switch } from '@mui/material';
 
