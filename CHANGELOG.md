@@ -1,5 +1,11 @@
 # Changelog
 
+# [1.5.0] - 22-05-2023
+
+Added Support for `Server Components`
+
+Fixed some typos
+
 # [1.4.0] - 22-05-2023
 
 Bumped `react` version to `18.2.0`
