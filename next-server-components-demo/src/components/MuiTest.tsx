@@ -44,14 +44,6 @@ export const MuiTest = (): React.ReactElement => {
 								value: 5,
 								message: 'Must be less than 6 char',
 							},
-							minLength: {
-								value: 2,
-								message: 'Must be greater 1 char',
-							},
-							required: {
-								message: 'Required',
-								value: true,
-							},
 						}}
 					/>
 					<HookTextField
@@ -71,8 +63,8 @@ export const MuiTest = (): React.ReactElement => {
 						}}
 						rules={{
 							required: {
-								message: 'Required',
 								value: true,
+								message: 'Required',
 							},
 						}}
 					/>
