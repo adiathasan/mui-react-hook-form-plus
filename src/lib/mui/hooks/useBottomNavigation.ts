@@ -16,13 +16,13 @@ export type UseBottomNavigationRegisterFn = (props?: {
 };
 
 export const useBottomNavigation = (props?: UseBottomNavigationProps) => {
-	const [value, setvalue] = React.useState(props?.defaultValue ?? 0);
+	const [value, setValue] = React.useState(props?.defaultValue ?? 0);
 
 	const handleChange = React.useCallback(
 		(_event: React.ChangeEvent, value: number) => {
-			setvalue(value);
+			setValue(value);
 		},
-		[setvalue]
+		[setValue]
 	);
 
 	const register: UseBottomNavigationRegisterFn = ({ onChange } = {}) => {

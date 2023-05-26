@@ -14,13 +14,13 @@ export type UseTabsRegisterFn = (props?: { onChange?: (event: React.ChangeEvent,
 };
 
 export const useTabs = (props?: UseTabsProps) => {
-	const [value, setvalue] = React.useState(props?.defaultValue ?? 0);
+	const [value, setValue] = React.useState(props?.defaultValue ?? 0);
 
 	const handleChange = React.useCallback(
 		(_event: React.ChangeEvent, value: number) => {
-			setvalue(value);
+			setValue(value);
 		},
-		[setvalue]
+		[setValue]
 	);
 
 	const register: UseTabsRegisterFn = ({ onChange } = {}) => {
