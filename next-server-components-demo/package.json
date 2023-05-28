@@ -19,7 +19,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
-    "mui-react-hook-form-plus": "^1.4.0",
+    "mui-react-hook-form-plus": "^1.5.1",
     "next": "13.4.5-canary.0",
     "postcss": "8.4.23",
     "react": "18.2.0",

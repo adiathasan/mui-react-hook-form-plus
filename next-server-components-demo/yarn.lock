@@ -2104,10 +2104,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-mui-react-hook-form-plus@^1.4.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/mui-react-hook-form-plus/-/mui-react-hook-form-plus-1.5.0.tgz#3bd10560bb9203d79ef428d88c0110d48ed27410"
-  integrity sha512-3qN2HMSghrs0SErVKGgkH2SzO9qdC94lW33VcQaeGjXlmn7OpbQqT1HTTIz2fgt6q5zsYdlxa5+6GzNcBDoN5Q==
+mui-react-hook-form-plus@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/mui-react-hook-form-plus/-/mui-react-hook-form-plus-1.5.1.tgz#089861901f056284f51729eb243b613f3988cda4"
+  integrity sha512-AY0ZyRp+tX+V/j2tz7Ur9x0zHAe1GdvFV4FmTs1N6Ck8OYft9lyhGZHd21z/8psBfiiumBArTVlhPqoRylE3eQ==
 
 mz@^2.7.0:
   version "2.7.0"
