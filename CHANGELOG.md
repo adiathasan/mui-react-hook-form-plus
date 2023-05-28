@@ -1,6 +1,15 @@
 # Changelog
 
-# [1.5.0] - 22-05-2023
+# [1.5.1] - 28-05-2023
+
+Fixed typos
+
+```diff
+- "@mui/material": ">=5.0.  0",
++ "@mui/material": ">=5.0.0",
+```
+
+# [1.5.0] - 27-05-2023
 
 Added Support for `Server Components`
 
